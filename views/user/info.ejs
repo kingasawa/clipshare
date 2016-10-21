@@ -1,0 +1,42 @@
+<%- partial ('../common/navbar.ejs') %>
+
+<div class="container-fluid text-center user-info">
+  <div class="row content">
+    <div class="col-sm-4 sidenav">
+      <img src="http://www.w3schools.com/bootstrap/newyork.jpg" class="img-circle img-thumbnail" width="204" height="200">
+      <hr>
+      <% if (edit=='ok') { %>
+      <p><h1 userdata="name"><%= userdata.name %></h1></p>
+
+      <ul class="list-group">
+        <li class="list-group-item"><span class="glyphicon glyphicon-barcode pull-left"></span><span title="id" static-userdata="id"><%= userdata.id %></span></li>
+        <li class="list-group-item"><span class="glyphicon glyphicon-user pull-left"></span><span title="nhóm thành viên" static-userdata="group"><%= userdata.group %></span></li>
+        <li class="list-group-item"><span class="glyphicon glyphicon-envelope pull-left"></span><span title="email" userdata="email"><%= userdata.email %></span></li>
+        <li class="list-group-item"><span class="glyphicon glyphicon-heart pull-left"></span><span title="điểm" userdata="point"><%= userdata.point %></span></li>
+      </ul>
+    </div>
+    <div class="col-sm-8 text-left">
+      <h1>Giới Thiệu</h1>
+      <p title="giới thiệu" userdata="about" data-type="textarea">Nói về bản thân của mình.</p>
+      <% } else { %>
+      <p><h1><%= userdata.name %></h1></p>
+
+      <ul class="list-group">
+        <li class="list-group-item"><span class="glyphicon glyphicon-barcode pull-left"></span><span title="id"><%= userdata.id %></span></li>
+        <li class="list-group-item"><span class="glyphicon glyphicon-user pull-left"></span><span title="nhóm thành viên"><%= userdata.group %></span></li>
+        <li class="list-group-item"><span class="glyphicon glyphicon-envelope pull-left"></span><span title="email"><%= userdata.email %></span></li>
+        <li class="list-group-item"><span class="glyphicon glyphicon-heart pull-left"></span><span title="điểm"><%= userdata.point %></span></li>
+      </ul>
+    </div>
+    <div class="col-sm-8 text-left">
+      <h1>Giới Thiệu</h1>
+      <p title="giới thiệu">Nói về bản thân của mình.</p>
+      <% } %>
+      <hr>
+      <h3>Test</h3>
+      <p>Lorem ipsum...</p>
+    </div>
+
+  </div>
+</div>
+<%- partial ('../common/footer.ejs') %>

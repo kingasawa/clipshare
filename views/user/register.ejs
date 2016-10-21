@@ -1,0 +1,54 @@
+<%- partial ('../common/navbar.ejs') %>
+<div class="container">
+  <h2>Đăng Ký</h2>
+  <span class="help-block">Đăng ký để sử dụng đầy đủ chức năng của Website mà không bị giới hạn .</span>
+  <form role="form" class="form-register" id="register">
+
+
+    <div class="form-group has-feedback">
+      <label for="inputEmail" class="sr-only">Nhập Email</label>
+      <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+      <input type="text" name="email" id="inputEmail" class="form-control" placeholder="Nhập Email" required autofocus>
+    </div>
+
+    <div class="form-group has-feedback">
+      <label for="inputPassword" class="sr-only">Nhập Mật Khẩu</label>
+      <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+      <input type="text" name="password" id="inputPassword" class="form-control" placeholder="Nhập Mật Khẩu" required>
+    </div>
+
+    <div class="form-group has-feedback">
+      <label for="inputName" class="sr-only">Nhập Tên</label>
+      <span class="glyphicon glyphicon-user form-control-feedback"></span>
+      <input type="text" name="name" id="inputName" class="form-control" placeholder="Nhập Tên" required autofocus>
+    </div>
+
+    <div class="form-group has-feedback">
+      <label for="inputBirthday" class="sr-only">Ngày Sinh</label>
+      <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
+      <input type="text" name="birthday" id="inputBirthday" class="form-control" placeholder="Nhập Ngày Sinh" required autofocus>
+    </div>
+
+
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Đăng Ký</button>
+  </form>
+  <div class="modal fade" id="regModal" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+
+          <h4 class="modal-title">Thông Báo</h4>
+        </div>
+        <div class="modal-body">
+          <p class="notice-text"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- partial ('../common/footer.ejs') %>

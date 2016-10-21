@@ -1,0 +1,97 @@
+/* Remove the navbar's default margin-bottom and rounded borders */
+body {
+  background:#f1f1f1 !important;
+  letter-spacing: 0.5px;
+}
+.navbar {
+  margin-bottom: 10px;
+  border-radius: 0;
+
+
+}
+.sidenav {
+  padding-top: 20px;
+  background-color: #f1f1f1;
+
+}
+.jumbotron {
+  background:#4b8c95;
+  color:#f5e1ca !important;
+}
+
+/* Add a gray background color and some padding to the footer */
+footer {
+  margin-top:20px;
+  background-color: #f2f2f2;
+  padding: 25px;
+}
+table input[type="checkbox"] {
+  position: relative !important;
+}
+
+.carousel-inner img {
+  width: 100%; /* Set width to 100% */
+  min-height: 200px;
+}
+/* Hide the carousel text when the screen is less than 600 pixels wide */
+@media (max-width: 600px) {
+  .carousel-caption {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  .container {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+}
+p.post {
+  background: #fff;
+  padding:8px;
+}
+
+.top-review  li.list-group-item {
+  float:left;
+  padding:6px 5px !important;
+}
+.top-review .hinh {
+  width:20%;
+  float:left;
+}
+
+.top-review .noidung {
+  float:left;
+  width:80%;
+  padding:2px;
+  line-height: 14px;
+  height:52px;
+  overflow: hidden;
+  text-overflow: ellipsis !important;
+}
+span.review-title {
+  font-weight: bold;
+  width:100%;
+  float:left;
+  margin-bottom: 4px;
+  font-size: 15px;
+}
+span.review-content {
+  font-size: 13px;
+  color:#737373;
+}
+.top-review ul.list-group {
+  margin:0;
+}
+.nav-tabs {
+  border:none !important;
+}
+select#threads {
+  max-width: 250px;
+}
+select#status {
+  max-width: 100px;
+}
+form#login {
+  background:#fff;
+  padding:20px;
+}

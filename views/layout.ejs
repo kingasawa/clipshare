@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%=typeof title == 'undefined' ? 'CLIP SHARE' : title%></title>
+
+    <!-- Viewport mobile tag for sensible mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--
+        Stylesheets and Preprocessors
+        ==============================
+
+        You can always bring in CSS files manually with `<link>` tags, or asynchronously
+        using a solution like AMD (RequireJS).  Or, if you like, you can take advantage
+        of Sails' conventional asset pipeline (boilerplate Gruntfile).
+
+        By default, stylesheets from your `assets/styles` folder are included
+        here automatically (between STYLES and STYLES END). Both CSS (.css) and LESS (.less)
+        are supported. In production, your styles will be minified and concatenated into
+        a single file.
+
+        To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
+        For example, here are a few things you could do:
+
+            + Change the order of your CSS files
+            + Import stylesheets from other directories
+            + Use a different or additional preprocessor, like SASS, SCSS or Stylus
+    -->
+
+    <!--STYLES-->
+    <link rel="stylesheet" href="/styles/importer.css">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap-editable.css">
+    <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+    <!--STYLES END-->
+  </head>
+
+  <body>
+
+    <%- body %>
+
+
+
+    <!--
+        Client-side Templates
+        ========================
+
+        HTML templates are important prerequisites of modern, rich client applications.
+        To work their magic, frameworks like Backbone, Angular, Ember, and Knockout require
+        that you load these templates client-side.
+
+        By default, your Gruntfile is configured to automatically load and precompile
+        client-side JST templates in your `assets/templates` folder, then
+        include them here automatically (between TEMPLATES and TEMPLATES END).
+
+        To customize this behavior to fit your needs, just edit `tasks/pipeline.js`.
+        For example, here are a few things you could do:
+
+            + Import templates from other directories
+            + Use a different template engine (handlebars, jade, dust, etc.)
+            + Internationalize your client-side templates using a server-side
+              stringfile before they're served.
+    -->
+
+    <!--TEMPLATES-->
+    
+    <!--TEMPLATES END-->
+
+    <!--SCRIPTS-->
+    <script src="/js/dependencies/sails.io.js"></script>
+    <script src="/js/plugins/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/bootstrap-editable.min.js"></script>
+    <script src="/js/jquery.timeago.js"></script>
+    <script src="/js/tinymce/jquery.tinymce.min.js"></script>
+    <script src="/js/tinymce/plugins/advlist/plugin.min.js"></script>
+    <script src="/js/tinymce/plugins/anchor/plugin.min.js"></script>
+    <script src="/js/tinymce/plugins/autolink/plugin.min.js"></script>
+    <script src="/js/tinymce/plugins/autoresize/plugin.min.js"></script>
+    <script src="/js/tinymce/plugins/autosave/plugin.min.js"></script>
+    <script src="/js/tinymce/plugins/bbcode/plugin.min.js"></script>
+    <script src="/js/tinymce/plugins/charmap/plugin.min.js"></script>
+    <script src="/js/tinymce/plugins/code/plugin.min.js"></script>
+    <script src="/js/tinymce/plugins/codesample/plugin.min.js"></script>
+    <script src="/js/tinymce/plugins/colorpicker/plugin.min.js"></script>
+    <script src="/js/tinymce/plugins/contextmenu/plugin.min.js"></script>
+    <script src="/js/tinymce/plugins/directionality/plugin.min.js"></script>
+    <script src="/js/tinymce/plugins/emoticons/plugin.min.js"></script>
+    <script src="/js/tinymce/plugins/example/plugin.min.js"></script>
+    <script src="/js/tinymce/plugins/example_dependency/plugin.min.js"></script>
+    <script src="/js/tinymce/plugins/fullpage/plugin.min.js"></script>
+    <script src="/js/tinymce/plugins/fullscreen/plugin.min.js"></script>
+    <script src="/js/tinymce/plugins/hr/plugin.min.js"></script>
+    <script src="/js/tinymce/plugins/image/plugin.min.js"></script>
+    <script src="/js/tinymce/plugins/imagetools/plugin.min.js"></script>
+    <script src="/js/tinymce/plugins/importcss/plugin.min.js"></script>
+    <script src="/js/tinymce/plugins/insertdatetime/plugin.min.js"></script>
+    <script src="/js/tinymce/plugins/layer/plugin.min.js"></script>
+    <script src="/js/tinymce/plugins/legacyoutput/plugin.min.js"></script>
+    <script src="/js/tinymce/plugins/link/plugin.min.js"></script>
+    <script src="/js/tinymce/plugins/lists/plugin.min.js"></script>
+    <script src="/js/tinymce/plugins/media/plugin.min.js"></script>
+    <script src="/js/tinymce/plugins/nonbreaking/plugin.min.js"></script>
+    <script src="/js/tinymce/plugins/noneditable/plugin.min.js"></script>
+    <script src="/js/tinymce/plugins/pagebreak/plugin.min.js"></script>
+    <script src="/js/tinymce/plugins/paste/plugin.min.js"></script>
+    <script src="/js/tinymce/plugins/preview/plugin.min.js"></script>
+    <script src="/js/tinymce/plugins/print/plugin.min.js"></script>
+    <script src="/js/tinymce/plugins/save/plugin.min.js"></script>
+    <script src="/js/tinymce/plugins/searchreplace/plugin.min.js"></script>
+    <script src="/js/tinymce/plugins/spellchecker/plugin.min.js"></script>
+    <script src="/js/tinymce/plugins/tabfocus/plugin.min.js"></script>
+    <script src="/js/tinymce/plugins/table/plugin.min.js"></script>
+    <script src="/js/tinymce/plugins/template/plugin.min.js"></script>
+    <script src="/js/tinymce/plugins/textcolor/plugin.min.js"></script>
+    <script src="/js/tinymce/plugins/textpattern/plugin.min.js"></script>
+    <script src="/js/tinymce/plugins/visualblocks/plugin.min.js"></script>
+    <script src="/js/tinymce/plugins/visualchars/plugin.min.js"></script>
+    <script src="/js/tinymce/plugins/wordcount/plugin.min.js"></script>
+    <script src="/js/tinymce/themes/inlite/theme.min.js"></script>
+    <script src="/js/tinymce/themes/modern/theme.min.js"></script>
+    <script src="/js/tinymce/tinymce.min.js"></script>
+    <!--SCRIPTS END-->
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand glyphicon glyphicon-heart" href="/trangchu"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/admin"><span class="glyphicon glyphicon-home"></span> Trang Chính</a></li>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span> Thành Viên <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/admin/user"><span class="glyphicon glyphicon-user"></span> Quản lý thành viên</a></li>
+
+          </ul>
+        </li>
+
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-tasks"></span> Trận Đấu <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="admin/match/view"><span class="glyphicon glyphicon-cog"></span> Quản lý các trận đấu</a></li>
+            <li><a href="admin/match/add"><span class="glyphicon glyphicon-plus"></span> Thêm trận đấu mới</a></li>
+
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Đăng Xuất</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
