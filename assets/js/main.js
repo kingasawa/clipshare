@@ -67,8 +67,9 @@ $(function() {
     console.log("admin/userdel?id="+searchIDs);
     socket.get("/admin/userdel?id="+searchIDs)
   });
-  
   //END USER MANAGEMENT
+
+
 
 });
 

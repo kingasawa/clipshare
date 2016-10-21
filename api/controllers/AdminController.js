@@ -4,29 +4,23 @@
  * @description :: Server-side logic for managing admins
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
-// import QueryBuilder from 'datatable';
-var QueryBuilder = require('datatable');
 
 module.exports = {
   index: (req,res) => {
-
-
     let data = {
-
       userName: 'Khanh Admin',
       testVariable: 'this is test value'
     };
-    return res.view('admin/index', data)
+    return res.view('template/admin/index', data)
   },
+
   userid: (req,res) => {
     let params = req.allParams();
-
     User.findOne({'id':params.id}).exec(function(err,userdata){
-
-      res.view('admin/user-info',{userdata});
-
+      res.view('template/admin/user/user-info',{userdata});
     })
   },
+
   userdel: (req,res) => {
     let params = req.allParams();
     console.log("check params:",params);
@@ -35,14 +29,8 @@ module.exports = {
         return res.negotiate(err);
       }
       sails.log('xóa thành công : '+params.id);
-      return res.redirect('admin/user');
+      return res.redirect('/admin/user');
     });
-  },
-
-  addmatch: (req,res) => {
-    return res.view("match/add")
   }
-
-
 };
 

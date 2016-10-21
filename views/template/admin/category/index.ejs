@@ -1,0 +1,67 @@
+<%- partial ('../common/admin_nav.ejs') %>
+
+<div class="container" id="page-cat_manager">
+  <h2>CATEGORY LIST</h2>
+
+  <table class="table table-bordered" id="manage_category">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Column</th>
+      <th>Status</th>
+      <th>Xử lý</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% _.each(allCategory, function(category) { %>
+    <tr>
+      <td class="cat_id"><%= category.id %></td>
+      <td class="cat_name"><%= category.name %></td>
+      <td class="cat_description"><%= category.description %></td>
+      <td class="cat_column"><%= category.column %></td>
+      <td class="cat_status"><%= category.status %></td>
+      <td class="cat_submit">
+        <a class="btn btn-primary" href="/admin/category/edit/<%= category.id %>"><i class="fa fa-bank fa-sm" aria-hidden="true"></i></a>
+        <a class="btn btn-danger" href="/admin/category/delete/<%= category.id %>"><i class="fa fa-remove fa-sm" aria-hidden="true"></i></a>
+      </td>
+    </tr>
+    <% }) %>
+    </tbody>
+  </table>
+</div>
+
+<div class="modal fade" id="categoryModal" role="dialog">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Thực Hiện Giao Dịch</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal">
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="email">Hình Thức:</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" id="email" placeholder="Enter email">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">Password:</label>
+            <div class="col-sm-10">
+              <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-default">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Đồng Ý</button>
+      </div>
+    </div>
+  </div>
+</div>

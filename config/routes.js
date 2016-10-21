@@ -44,7 +44,7 @@ module.exports.routes = {
   '/admin/user/:id': 'AdminController.userid',
   '/admin/user/del/:id': 'AdminController.userdel',
   '/view/user/:id':'UserController.userid',
-  '/admin/match/add':'AdminController.addmatch',
+
 
   '/upload': {
     view: 'upload/index'

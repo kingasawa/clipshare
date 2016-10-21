@@ -7,11 +7,11 @@
 
 module.exports = {
   index: (req, res) => {
-    res.view("user/login");
+    res.view("template/user/login");
   },
 
   register: (req, res) => {
-    res.view("user/register");
+    res.view("template/user/register");
   }
 };
 

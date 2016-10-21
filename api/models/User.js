@@ -41,6 +41,10 @@ module.exports = {
     about: {
       type: 'longtext',
       defaultsTo: 'viết nội dung giới thiệu về bản thân của bạn'
+    },
+    posts: {
+      collection: 'post',
+      via: 'uid'
     }
 
   },
@@ -65,4 +69,3 @@ module.exports = {
     return cb();
   }
 };
-
