@@ -69,7 +69,29 @@ $(function() {
   });
   //END USER MANAGEMENT
 
-
+  // Item Manager Modal
+  $('#manage_category tbody tr').each(function() {
+    $(this).click(function(){
+      var cat_name = $(this).find('td.cat_name').text();
+      var cat_id = $(this).find('td.cat_id').text();
+      var cat_description = $(this).find('td.cat_description').text();
+      var cat_column = $(this).find('td.cat_column').text();
+      var cat_status = $(this).find('td.cat_status').text();
+      $('#edit-category-form input[name=name]').val(cat_name);
+      $('#edit-category-form input[name=id]').val(cat_id);
+      $('#edit-category-form input[name=description]').val(cat_description);
+      $('#edit-category-form input[name=column]').val(cat_column);
+      $('#edit-category-form input[name=status]').val(cat_status);
+      $('#del-category-form input[name=id]').val(cat_id);
+      $('#delCategoryModal span.cat_name').html('<strong>'+cat_name+'</strong>')
+    });
+    $('#manage_category tbody tr a.edit_category').click(function(){
+      $('#editCategoryModal').modal();
+    });
+    $('#manage_category tbody tr a.del_category').click(function(){
+      $('#delCategoryModal').modal();
+    })
+  });
 
 });
 

@@ -31,6 +31,61 @@ module.exports = {
       sails.log('xóa thành công : '+params.id);
       return res.redirect('/admin/user');
     });
+  },
+
+  category: (req,res) => {
+    Category.find(function(err,allCategory) {
+      if (err) {
+        return res.negotiate(err)
+      }
+      res.view('template/admin/category/index',{allCategory})
+    })
+  },
+
+  catid: (req,res) => {
+    if (!req.isSocket) {
+      return res.badRequest('sai zồi')
+    }
+    let params = req.allParams();
+    Category.update({id:params.id},{
+      name: params.name,
+      description: params.description,
+      column: params.column,
+      status: params.status
+    }).exec(function(err,result) {
+      if (err) {
+        return res.negotiate(err)
+      }
+      res.json(result)
+    })
+  },
+
+  catadd: (req,res) => {
+    if (!req.isSocket) {
+      return res.badRequest('sai zồi')
+    }
+    let params = req.allParams();
+    Category.create({
+      name: params.name,
+      description: params.description,
+      column: params.column,
+      status: params.status
+    }).exec(function(err,result) {
+      if (err) {
+        return res.negotiate(err)
+      }
+      res.json(result)
+    })
+  },
+
+  post: (req,res) => {
+    Post.find(function(err,allPost) {
+      if (err) {
+        return res.negotiate(err)
+      }
+      res.view('template/admin/post/index',allPost)
+    })
   }
+
 };
 

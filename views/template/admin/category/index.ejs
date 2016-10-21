@@ -1,4 +1,4 @@
-<%- partial ('../common/admin_nav.ejs') %>
+<%- partial ('../../common/admin_nav.ejs') %>
 
 <div class="container" id="page-cat_manager">
   <h2>CATEGORY LIST</h2>
@@ -23,8 +23,8 @@
       <td class="cat_column"><%= category.column %></td>
       <td class="cat_status"><%= category.status %></td>
       <td class="cat_submit">
-        <a class="btn btn-primary" href="/admin/category/edit/<%= category.id %>"><i class="fa fa-bank fa-sm" aria-hidden="true"></i></a>
-        <a class="btn btn-danger" href="/admin/category/delete/<%= category.id %>"><i class="fa fa-remove fa-sm" aria-hidden="true"></i></a>
+        <a class="btn btn-primary edit_category"><i class="fa fa-pencil-square-o"></i> Edit</a>
+        <a class="btn btn-danger del_category"><i class="fa fa-remove fa-sm"></i> Delete</a>
       </td>
     </tr>
     <% }) %>
@@ -32,35 +32,68 @@
   </table>
 </div>
 
-<div class="modal fade" id="categoryModal" role="dialog">
+<!--// Modal Edit Category-->
+<div class="modal fade" id="editCategoryModal" role="dialog">
   <div class="modal-dialog modal-md">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title">Thực Hiện Giao Dịch</h4>
+        <h4 class="modal-title">CATEGORY EDIT</h4>
       </div>
       <div class="modal-body">
-        <form class="form-horizontal">
+        <form class="form-horizontal" id="edit-category-form">
           <div class="form-group">
-            <label class="control-label col-sm-2" for="email">Hình Thức:</label>
+            <label class="control-label col-sm-2" for="name">Name:</label>
             <div class="col-sm-10">
-              <input type="email" class="form-control" id="email" placeholder="Enter email">
+              <input type="text" class="form-control" name="name" id="name" placeholder="Enter name">
             </div>
           </div>
           <div class="form-group">
-            <label class="control-label col-sm-2" for="pwd">Password:</label>
+            <label class="control-label col-sm-2" for="description">Description:</label>
             <div class="col-sm-10">
-              <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+              <input type="text" class="form-control" name="description" id="description" placeholder="Enter description">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="column">Column:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="column" id="column" placeholder="Enter column">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="description">Status:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="status" id="status" placeholder="Enter status">
             </div>
           </div>
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
-              <button type="submit" class="btn btn-default">Submit</button>
+              <button type="submit" class="btn btn-primary"><i class="fa fa-pencil-square-o"></i> Edit</button>
             </div>
           </div>
         </form>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Đồng Ý</button>
+    </div>
+  </div>
+</div>
+
+<!--// Modal Del Category-->
+<div class="modal fade" id="delCategoryModal" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">DELETE CATEGORY</h4>
+      </div>
+      <div class="modal-body">
+        <p>Are you ready to delete category with name : <span class="cat_name"></span> ?</p>
+        <form class="form-horizontal" id="del-category-form">
+          <input type="text" class="sr-only" name="id" value="">
+          <div class="form-group">
+            <div class="col-sm-12 text-right">
+              <button type="submit" class="btn btn-danger"><i class="fa fa-remove fa-sm"></i> Delete</button>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   </div>

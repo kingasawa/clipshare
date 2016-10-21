@@ -54,7 +54,6 @@ module.exports = {
       password = md5(password);
       sails.log('Thông tin đăng nhập {email, password}', {email, password});
       User.findOne({email, password}).exec(function (err, res) {
-        sails.log('user data', res);
         if (err)
           reject(err);
         if (typeof res == 'undefined'){
@@ -64,6 +63,7 @@ module.exports = {
       })
     })
   },
+
   beforeCreate: function (attrs, cb) {
     attrs.password = md5(attrs.password);
     return cb();
