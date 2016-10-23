@@ -31,15 +31,17 @@ var jsFilesToInject = [
   // Load sails.io before everything else
   'js/dependencies/sails.io.js',
   'js/plugins/jquery.min.js',
+
   // Dependencies like jQuery, or Angular are brought in here
   'js/dependencies/**/*.js',
   // All of the rest of your client-side js files
   // will be injected here in no particular order.
 
   'js/bootstrap.min.js',
+  'ckeditor/ckeditor.js',
   'js/main.js',
+
   'js/bootstrap-editable.min.js',
-  '/tinymce/tinymce.min.js',
   'js/plugins/api.js',
   'js/plugins/jquery.dataTables.min.js'
 ];

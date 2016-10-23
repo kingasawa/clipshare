@@ -31,6 +31,7 @@ $(function() {
     $('#regModal').modal();
   });
 
+
   // x-editable
   $.fn.editable.defaults.mode = 'inline';
   user_id = $(".user-info [static-userdata=id]").text();
@@ -123,16 +124,19 @@ $(function() {
 
   // POST Manager Modal
   $('#manage_post tbody tr').each(function() {
+
     $(this).click(function(){
       var post_name = $(this).find('td.post_name').text();
       var post_id = $(this).find('td.post_id').text();
       var post_description = $(this).find('td.post_description').text();
       var post_status = $(this).find('td.post_status').text();
+      var post_source = $(this).find('td.post_source').text();
       var post_content = $(this).find('td.post_content').text();
       $('#edit-post-form input[name=name]').val(post_name);
       $('#edit-post-form input[name=id]').val(post_id);
       $('#edit-post-form input[name=description]').val(post_description);
-      $('#edit-post-form input[name=content]').val(post_content);
+      $('#edit-post-form textarea[name=content]').html(post_content);
+      $('#edit-post-form input[name=source]').val(post_source);
       $('#del-post-form input[name=id]').val(post_id);
       $('#delPostModal span.post_name').html('<strong>'+post_name+'</strong>');
       if(post_status==1) {
@@ -151,10 +155,9 @@ $(function() {
   });
 
   $('#edit-post-form').submit(function(e) {
-    $('#editPostModal').modal('hide');
     e.preventDefault();
     var data = $('#edit-post-form').serialize();
-    socket.get('/admin/postid?' + data);
+    socket.get('/admin/postedit?' + data);
     location.reload();
   });
 
@@ -173,7 +176,12 @@ $(function() {
     // $('#manage_category tr.tr-'+id).fadeOut('slow');
   });
 
-
+  var getLink = window.location.href.substr().split("/");
+  if ( getLink[3]+'/'+getLink[4] =="admin/post") {
+    CKEDITOR.replace('add-content');
+  } else if ( getLink[3]+'/'+getLink[4] =="admin/postid") {
+  CKEDITOR.replace('edit-content');
+  }
 
 });
 
@@ -196,4 +204,8 @@ function showMyImage(fileInput) {
     })(img);
     reader.readAsDataURL(file);
   }
+}
+
+function goBack() {
+  window.history.back();
 }

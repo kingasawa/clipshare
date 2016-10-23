@@ -99,6 +99,13 @@ module.exports = {
   },
 
   postid: (req,res) => {
+    let params = req.allParams();
+    Post.findOne({id:params.id}).exec(function(err,result) {
+      res.view('template/admin/post/edit',result)
+    })
+  },
+
+  postedit: (req,res) => {
     if (!req.isSocket) {
       return res.badRequest('sai zồi')
     }

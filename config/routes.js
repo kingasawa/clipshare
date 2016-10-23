@@ -39,7 +39,7 @@ module.exports.routes = {
   '/logout': 'UserController.logout',
 
   '/admin': 'AdminController.index', //trang chủ admin
-
+  '/admin/postid/:id': 'AdminController.postid',
   '/admin/user': 'UserController.allusers',
   '/admin/user/:id': 'AdminController.userid',
   '/admin/user/del/:id': 'AdminController.userdel',

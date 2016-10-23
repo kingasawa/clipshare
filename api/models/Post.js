@@ -17,6 +17,12 @@ module.exports = {
     type: {
       type: 'string'
     },
+    thumbnail: {
+      type: 'string'
+    },
+    source: {
+      type: 'string'
+    },
     content: {
       type: 'string'
     },
