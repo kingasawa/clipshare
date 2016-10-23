@@ -128,6 +128,7 @@ module.exports = {
       if (err) {
         return res.negotiate(err)
       }
+      console.log(result);
       res.json(result)
     })
   },

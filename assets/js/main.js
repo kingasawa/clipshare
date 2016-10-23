@@ -163,6 +163,18 @@ $(function() {
 
   $('#add-post-form').submit(function(a) {
     $('#addPostModal').modal('hide');
+    // var newdata = new FormData(this);
+    // $.ajax({
+    //   url: 'file/thumbnail',
+    //   data: newdata,
+    //   cache: false,
+    //   contentType: 'multipart/form-data',
+    //   processData: false,
+    //   type: 'POST',
+    //   success: function(result){
+    //     alert(result);
+    //   }
+    // });
     a.preventDefault();
     var data = $('#add-post-form').serialize();
     socket.get('/admin/postadd?' + data);
@@ -194,7 +206,7 @@ function showMyImage(fileInput) {
     if (!file.type.match(imageType)) {
       continue;
     }
-    var img=document.getElementById("thumb");
+    var img=document.getElementById("thumbnail");
     img.file = file;
     var reader = new FileReader();
     reader.onload = (function(aImg) {
