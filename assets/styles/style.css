@@ -10,12 +10,12 @@ table thead , .modal-header {
   background:#a94442;
   color:#fff;
 }
-#page-cat_manager, #page-post_manager {
+#page-cat_manager, #page-post_manager,#page-user_manager {
   background: #fff;
 
 }
 .navbar {
-  margin-bottom: 0;
+  margin-bottom: 15px;
   border-radius: 0;
  }
 .sidenav {
@@ -28,7 +28,7 @@ table thead , .modal-header {
   color:#f5e1ca !important;
 }
 #homeCarousel {
-  margin-bottom:20px;
+  margin:-15px 0 20px 0;
 }
 .thumbnail iframe {
   width:100%;

@@ -2,7 +2,7 @@
 
 <div id="main-page" class="container-fluid">
   <% _.each(foundPost, function(post) { %>
-  <div class="col-sm-3">
+  <div class="col-md-3 col-xs-12 col-sm-6">
     <div class="thumbnail">
       <iframe src="https://www.youtube.com/embed/<%= post.content %>" frameborder="0" allowfullscreen="no"></iframe>
         <p><a href="/post/view/<%= post.id %>"><strong><%= post.name %></strong></a></p>
