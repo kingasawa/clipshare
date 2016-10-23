@@ -28,7 +28,7 @@ module.exports = {
   //Xóa toàn bộ session của user khi logout
   logout: (req, res) => {
     req.session.destroy(function() {
-      res.redirect('/trangchu');
+      res.redirect('/home');
     });
   },
   register: (req, res) => {

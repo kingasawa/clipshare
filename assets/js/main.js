@@ -13,7 +13,7 @@ $(function() {
   });
   // Khi client nhận thông báo login-success từ server sẽ chuyển user sang trang home
   socket.on('user/login-success', function() {
-    window.location = '/trangchu';
+    window.location = '/home';
   });
 
   $('#register').submit(function (r) {
@@ -69,7 +69,7 @@ $(function() {
   });
   //END USER MANAGEMENT
 
-  // Item Manager Modal
+  // Category Manager Modal
   $('#manage_category tbody tr').each(function() {
     $(this).click(function(){
       var cat_name = $(this).find('td.cat_name').text();
@@ -81,10 +81,15 @@ $(function() {
       $('#edit-category-form input[name=id]').val(cat_id);
       $('#edit-category-form input[name=description]').val(cat_description);
       $('#edit-category-form input[name=column]').val(cat_column);
-      $('#edit-category-form input[name=status]').val(cat_status);
       $('#del-category-form input[name=id]').val(cat_id);
-      $('#delCategoryModal span.cat_name').html('<strong>'+cat_name+'</strong>')
+      $('#delCategoryModal span.cat_name').html('<strong>'+cat_name+'</strong>');
+      if(cat_status==1) {
+        $('#edit-category-form .val1').attr('selected','selected')
+      } else {
+        $('#edit-category-form .val0').attr('selected','selected')
+      }
     });
+
     $('#manage_category tbody tr a.edit_category').click(function(){
       $('#editCategoryModal').modal();
     });
@@ -92,6 +97,83 @@ $(function() {
       $('#delCategoryModal').modal();
     })
   });
+
+  $('#edit-category-form').submit(function(e) {
+    $('#editCategoryModal').modal('hide');
+    e.preventDefault();
+    var data = $('#edit-category-form').serialize();
+    socket.get('/admin/catid?' + data);
+    location.reload();
+  });
+
+  $('#add-category-form').submit(function(a) {
+    $('#addCategoryModal').modal('hide');
+    a.preventDefault();
+    var data = $('#add-category-form').serialize();
+    socket.get('/admin/catadd?' + data);
+    location.reload();
+  });
+
+  $('#del-category-form').submit(function() {
+    $('#delCategoryModal').modal('hide');
+    var id = $('#del-category-form input[name=id]').val();
+    socket.get('/admin/catdel?id='+id);
+    // $('#manage_category tr.tr-'+id).fadeOut('slow');
+  });
+
+  // POST Manager Modal
+  $('#manage_post tbody tr').each(function() {
+    $(this).click(function(){
+      var post_name = $(this).find('td.post_name').text();
+      var post_id = $(this).find('td.post_id').text();
+      var post_description = $(this).find('td.post_description').text();
+      var post_status = $(this).find('td.post_status').text();
+      var post_content = $(this).find('td.post_content').text();
+      $('#edit-post-form input[name=name]').val(post_name);
+      $('#edit-post-form input[name=id]').val(post_id);
+      $('#edit-post-form input[name=description]').val(post_description);
+      $('#edit-post-form input[name=content]').val(post_content);
+      $('#del-post-form input[name=id]').val(post_id);
+      $('#delPostModal span.post_name').html('<strong>'+post_name+'</strong>');
+      if(post_status==1) {
+        $('#edit-post-form .val1').attr('selected','selected')
+      } else {
+        $('#edit-post-form .val0').attr('selected','selected')
+      }
+    });
+
+    $('#manage_post tbody tr a.edit_post').click(function(){
+      $('#editPostModal').modal();
+    });
+    $('#manage_post tbody tr a.del_post').click(function(){
+      $('#delPostModal').modal();
+    })
+  });
+
+  $('#edit-post-form').submit(function(e) {
+    $('#editPostModal').modal('hide');
+    e.preventDefault();
+    var data = $('#edit-post-form').serialize();
+    socket.get('/admin/postid?' + data);
+    location.reload();
+  });
+
+  $('#add-post-form').submit(function(a) {
+    $('#addPostModal').modal('hide');
+    a.preventDefault();
+    var data = $('#add-post-form').serialize();
+    socket.get('/admin/postadd?' + data);
+    location.reload();
+  });
+
+  $('#del-post-form').submit(function() {
+    $('#delPostModal').modal('hide');
+    var id = $('#del-post-form input[name=id]').val();
+    socket.get('/admin/postdel?id='+id);
+    // $('#manage_category tr.tr-'+id).fadeOut('slow');
+  });
+
+
 
 });
 

@@ -1,0 +1,177 @@
+<%- partial ('../../common/admin_nav.ejs') %>
+
+<div class="container" id="page-post_manager">
+  <h2>POST LIST
+    <span class="pull-right">
+      <a class="btn btn-success btn-sm" data-toggle="modal" data-target="#addPostModal">
+        <i class="fa fa-plus fa-lg"></i> New post</a></span>
+  </h2>
+
+  <table class="table table-bordered" id="manage_post">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Content</th>
+      <th>Status</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% _.each(allPost, function(post) { %>
+    <tr>
+      <td class="post_id"><%= post.id %></td>
+      <td class="post_name"><%= post.name %></td>
+      <td class="post_description"><%= post.description %></td>
+      <td class="post_content"><%= post.content %></td>
+      <td class="post_status"><%= post.status %></td>
+      <td class="post_submit">
+        <a class="btn btn-primary edit_post"><i class="fa fa-pencil-square-o"></i> Edit</a>
+        <a class="btn btn-danger del_post"><i class="fa fa-remove fa-sm"></i> Delete</a>
+      </td>
+    </tr>
+    <% }) %>
+    </tbody>
+  </table>
+</div>
+
+<!--// Modal Add New Post -->
+<div class="modal fade" id="addPostModal" role="dialog">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"><i class="fa fa-plus"></i> ADD NEW POST</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal" id="add-post-form">
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="category">Category:</label>
+            <div class="col-sm-10">
+              <select class="form-control" name="cid" id="cid">
+                <% _.each(allCategory, function(category) { %>
+                  <option value="<%= category.id %>"><%= category.name %></option>
+                <% }) %>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="name">Name:</label>
+            <div class="col-sm-10">
+              <input class="sr-only" name="uid" value="<%= req.session.user.id %>">
+              <input type="text" class="form-control" name="name" id="name" placeholder="Enter name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="description">Description:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="description" id="description" placeholder="Enter description">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="type">Type:</label>
+            <div class="col-sm-10">
+              <select class="form-control" name="type" id="type">
+                <option value="1">Youtube</option>
+                <option value="2">URL</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="content">Content:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="content" id="content" placeholder="Enter content">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="status">Status:</label>
+            <div class="col-sm-10">
+              <select class="form-control" name="status" id="status">
+                <option class="val1" value="1">Show</option>
+                <option class="val0" value="0">Hide</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i> Add</button>
+              <span class="post-author pull-right">Post by : <%= req.session.user.name %></span>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--// Modal Edit Post-->
+<div class="modal fade" id="editPostModal" role="dialog">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">EDIT POST</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal" id="edit-post-form">
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="name">Name:</label>
+            <div class="col-sm-10">
+              <input class="sr-only" name="id" value="">
+              <input type="text" class="form-control" name="name" id="name" placeholder="Enter name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="description">Description:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="description" id="description" placeholder="Enter description">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="content">Content:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="content" id="content" placeholder="Enter content">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="description">Status:</label>
+            <div class="col-sm-10">
+              <select class="form-control" name="status" id="status">
+                <option class="val1" value="1">Show</option>
+                <option class="val0" value="0">Hide</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-primary"><i class="fa fa-pencil-square-o"></i> Edit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--// Modal Del Category-->
+<div class="modal fade" id="delPostModal" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">DELETE POST</h4>
+      </div>
+      <div class="modal-body">
+        <p>Are you ready to delete post with name : <span class="post_name"></span> ?</p>
+        <form class="form-horizontal" id="del-post-form">
+          <input type="text" class="sr-only" name="id" value="">
+          <div class="form-group">
+            <div class="col-sm-12 text-right">
+              <button type="submit" class="btn btn-danger"><i class="fa fa-remove fa-sm"></i> Delete</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -7,14 +7,11 @@
 
 module.exports = {
   index: (req,res) => {
-    let sampleDate = (new Date()).toString();
-    let data = {
-      currentDate: sampleDate,
-      textAdmin: 'Khánh Trần',
-      textDesc: '',
-      textVersion: '1.0.1'
-    };
-    return res.view("homepage",data)
+    // let sampleDate = (new Date()).toString();
+
+    Post.find(function(err,foundPost) {
+      return res.view("homepage",{foundPost})
+    });
   }
 };
 

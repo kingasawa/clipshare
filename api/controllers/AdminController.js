@@ -65,12 +65,7 @@ module.exports = {
       return res.badRequest('sai zồi')
     }
     let params = req.allParams();
-    Category.create({
-      name: params.name,
-      description: params.description,
-      column: params.column,
-      status: params.status
-    }).exec(function(err,result) {
+    Category.create(params).exec(function(err,result) {
       if (err) {
         return res.negotiate(err)
       }
@@ -78,12 +73,68 @@ module.exports = {
     })
   },
 
-  post: (req,res) => {
-    Post.find(function(err,allPost) {
+  catdel: (req,res) => {
+    if (!req.isSocket) {
+      return res.badRequest('sai zồi')
+    }
+    let params = req.allParams();
+    Category.destroy({id:params.id}).exec(function(err,result) {
       if (err) {
         return res.negotiate(err)
       }
-      res.view('template/admin/post/index',allPost)
+      res.ok(result)
+    })
+  },
+
+  post: (req,res) => {
+    Category.find(function(err,allCategory) {
+
+      Post.find(function(err,allPost) {
+        if (err) {
+          return res.negotiate(err)
+        }
+        res.view('template/admin/post/index',{allPost,allCategory})
+      })
+    })
+  },
+
+  postid: (req,res) => {
+    if (!req.isSocket) {
+      return res.badRequest('sai zồi')
+    }
+    let params = req.allParams();
+    Post.update({id:params.id},
+      params).exec(function(err,result) {
+      if (err) {
+        return res.negotiate(err)
+      }
+      res.json(result)
+    })
+  },
+
+  postadd: (req,res) => {
+    if (!req.isSocket) {
+      return res.badRequest('sai zồi')
+    }
+    let params = req.allParams();
+    Post.create(params).exec(function(err,result) {
+      if (err) {
+        return res.negotiate(err)
+      }
+      res.json(result)
+    })
+  },
+
+  postdel: (req,res) => {
+    if (!req.isSocket) {
+      return res.badRequest('sai zồi')
+    }
+    let params = req.allParams();
+    Post.destroy({id:params.id}).exec(function(err,result) {
+      if (err) {
+        return res.negotiate(err)
+      }
+      res.ok(result)
     })
   }
 

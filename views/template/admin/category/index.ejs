@@ -1,7 +1,11 @@
 <%- partial ('../../common/admin_nav.ejs') %>
 
 <div class="container" id="page-cat_manager">
-  <h2>CATEGORY LIST</h2>
+  <h2>CATEGORY LIST
+    <span class="pull-right">
+      <a class="btn btn-success btn-sm" data-toggle="modal" data-target="#addCategoryModal">
+        <i class="fa fa-plus fa-lg"></i> Add more</a></span>
+  </h2>
 
   <table class="table table-bordered" id="manage_category">
     <thead>
@@ -16,7 +20,7 @@
     </thead>
     <tbody>
     <% _.each(allCategory, function(category) { %>
-    <tr>
+    <tr class="tr-<%= category.id %>">
       <td class="cat_id"><%= category.id %></td>
       <td class="cat_name"><%= category.name %></td>
       <td class="cat_description"><%= category.description %></td>
@@ -31,16 +35,16 @@
     </tbody>
   </table>
 </div>
-
-<!--// Modal Edit Category-->
-<div class="modal fade" id="editCategoryModal" role="dialog">
+<!--// Modal Add Category-->
+<div class="modal fade" id="addCategoryModal" role="dialog">
   <div class="modal-dialog modal-md">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title">CATEGORY EDIT</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"><i class="fa fa-plus"></i> ADD CATEGORY</h4>
       </div>
       <div class="modal-body">
-        <form class="form-horizontal" id="edit-category-form">
+        <form class="form-horizontal" id="add-category-form">
           <div class="form-group">
             <label class="control-label col-sm-2" for="name">Name:</label>
             <div class="col-sm-10">
@@ -62,7 +66,59 @@
           <div class="form-group">
             <label class="control-label col-sm-2" for="description">Status:</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" name="status" id="status" placeholder="Enter status">
+              <select class="form-control" name="status" id="status">
+                <option value="1">Show</option>
+                <option value="0">Hide</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i> Add</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--// Modal Edit Category-->
+<div class="modal fade" id="editCategoryModal" role="dialog">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"><i class="fa fa-pencil-square-o"></i> EDIT CATEGORY</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal" id="edit-category-form">
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="name">Name:</label>
+            <div class="col-sm-10">
+              <input class="sr-only" name="id" value="">
+              <input type="text" class="form-control" name="name" id="name" placeholder="Enter name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="description">Description:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="description" id="description" placeholder="Enter description">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="column">Column:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" name="column" id="column" placeholder="Enter column">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="description">Status:</label>
+            <div class="col-sm-10">
+              <select class="form-control" name="status" id="status">
+                <option class="val1" value="1">Show</option>
+                <option class="val0" value="0">Hide</option>
+              </select>
             </div>
           </div>
           <div class="form-group">
@@ -82,12 +138,12 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">DELETE CATEGORY</h4>
+        <h4 class="modal-title"><i class="fa fa-remove fa-sm"></i> DELETE CATEGORY</h4>
       </div>
       <div class="modal-body">
         <p>Are you ready to delete category with name : <span class="cat_name"></span> ?</p>
         <form class="form-horizontal" id="del-category-form">
-          <input type="text" class="sr-only" name="id" value="">
+          <input type="text" class="" name="id" value="">
           <div class="form-group">
             <div class="col-sm-12 text-right">
               <button type="submit" class="btn btn-danger"><i class="fa fa-remove fa-sm"></i> Delete</button>
