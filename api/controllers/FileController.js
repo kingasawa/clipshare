@@ -19,6 +19,8 @@ module.exports = {
       var fileName = filesFound.fd.split("/assets");
 
       console.log('file name',fileName);
+      sails.sockets.blast('upload/thumbnail',{img:fileName[1]});
+      return false;
       // User.update(params,{avatar:fileName[1]}).exec(function(err,data) {
       //   if (err) console.log(err);
       //   return res.redirect('profile/'+params.phone);

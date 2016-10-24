@@ -164,6 +164,9 @@ $(function() {
   $('#uploadForm').submit(function(u){
     $('#thumbnail').modal('hide');
   });
+  socket.on('upload/thumbnail',function(data){
+    $('#add-post-form input[name=thumbnail]').val(data.img);
+  })
 
   $('#add-post-form').submit(function(a) {
     $('#addPostModal').modal('hide');
