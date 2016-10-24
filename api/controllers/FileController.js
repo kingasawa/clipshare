@@ -15,9 +15,10 @@ module.exports = {
 
       if (err) return res.serverError(err);
       console.log(uploadedFiles);
-      // let [filesFound] = uploadedFiles;
-      // var fileName = filesFound.fd.split("/assets");
+      let [filesFound] = uploadedFiles;
+      var fileName = filesFound.fd.split("/assets");
 
+      console.log('file name',fileName);
       // User.update(params,{avatar:fileName[1]}).exec(function(err,data) {
       //   if (err) console.log(err);
       //   return res.redirect('profile/'+params.phone);

@@ -161,6 +161,10 @@ $(function() {
     location.reload();
   });
 
+  $('#uploadForm').submit(function(u){
+    $('#thumbnail').modal('hide');
+  });
+
   $('#add-post-form').submit(function(a) {
     $('#addPostModal').modal('hide');
     // var newdata = new FormData(this);
