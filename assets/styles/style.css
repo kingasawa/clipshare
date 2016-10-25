@@ -1,6 +1,6 @@
 /* Remove the navbar's default margin-bottom and rounded borders */
 body {
-  background:#151515 !important;
+  background:#f1f1f1 !important;
   letter-spacing: 0.5px;
 }
 a:hover {
@@ -28,7 +28,7 @@ table thead , .modal-header {
   color:#f5e1ca !important;
 }
 #homeCarousel,.carousel-inner {
-  max-height:500px;
+
   margin:-15px 0 20px 0;
 }
 .thumbnail iframe {
@@ -47,8 +47,7 @@ table input[type="checkbox"] {
 
 .carousel-inner img {
   width: 100%; /* Set width to 100% */
-  min-height: 200px;
-  height:400px;
+
 }
 .desc-post {
   background:#222;
@@ -79,16 +78,13 @@ img.thumb-post {
   .carousel-caption {
     display: none;
   }
-  #homeCarousel {
-    max-height:250px;
-    overflow: hidden;
-  }
-}
-@media (max-width: 600px) {
   .container {
     padding-right: 0 !important;
     padding-left: 0 !important;
   }
+}
+@media (max-width: 1100px) {
+
 }
 form#login {
   background:#fff;
