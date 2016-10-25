@@ -110,7 +110,7 @@ module.exports = {
       if (err) {
         return res.negotiate(err)
       }
-      res.json(result)
+      return res.redirect('/admin/post')
     })
   },
 

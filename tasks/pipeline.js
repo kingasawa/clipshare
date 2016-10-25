@@ -40,7 +40,6 @@ var jsFilesToInject = [
   'js/bootstrap.min.js',
   'ckeditor/ckeditor.js',
   'js/main.js',
-
   'js/bootstrap-editable.min.js',
   'js/plugins/api.js',
   'js/plugins/jquery.dataTables.min.js'

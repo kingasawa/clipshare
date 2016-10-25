@@ -2,7 +2,11 @@
 <div class="container">
   <div id="main-post" class="col-sm-8">
     <div class="embed-responsive embed-responsive-16by9">
+      <% if (type==1) { %>
       <iframe class="embed-responsive-item" src="//www.youtube.com/embed/<%= source %>"></iframe>
+      <% } else { %>
+      <video controls><source src="/movie/<%= source %>" type="video/mp4"></video>
+      <% } %>
     </div>
     <div class="row post-info">
       <div class="col-sm-8">
@@ -17,3 +21,5 @@
   </div>
   <div id="side-post" class="col-sm-4"></div>
 </div>
+
+
