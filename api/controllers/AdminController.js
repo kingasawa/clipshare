@@ -87,15 +87,10 @@ module.exports = {
   },
 
   post: (req,res) => {
-    Category.find(function(err,allCategory) {
-
-      Post.find(function(err,allPost) {
-        if (err) {
-          return res.negotiate(err)
-        }
-        res.view('template/admin/post/index',{allPost,allCategory})
+    Post.find(function(err,allPost) {
+        if (err) return res.negotiate(err);
+        res.view('template/admin/post/index',{allPost})
       })
-    })
   },
 
   postid: (req,res) => {
@@ -117,6 +112,15 @@ module.exports = {
       }
       res.json(result)
     })
+  },
+
+  newpost: (req,res) => {
+    Files.find(function(err,allThumb) {
+      if (err) return res.negotiate(err);
+      Category.find(function(err,allCategory) {
+        res.view('template/admin/post/add',{allCategory,allThumb})
+      })
+    });
   },
 
   postadd: (req,res) => {

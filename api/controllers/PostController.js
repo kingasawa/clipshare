@@ -16,12 +16,12 @@ module.exports = {
   },
 
   view: (req,res) => {
-    let id = req.params.id;
-    Category.findOne({id:id}).exec(function(err,result) {
+    let params = req.allParams();
+    Post.findOne({id:params.id}).exec(function(err,result) {
       if (err) {
         return res.negotiate(err)
       }
-      res.view('template/post/category/view',result)
+      res.view('template/post',result)
     })
   },
 

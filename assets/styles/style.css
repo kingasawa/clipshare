@@ -1,6 +1,6 @@
 /* Remove the navbar's default margin-bottom and rounded borders */
 body {
-  background:#f1f1f1 !important;
+  background:#151515 !important;
   letter-spacing: 0.5px;
 }
 a:hover {
@@ -27,7 +27,8 @@ table thead , .modal-header {
   background:#4b8c95;
   color:#f5e1ca !important;
 }
-#homeCarousel {
+#homeCarousel,.carousel-inner {
+  max-height:500px;
   margin:-15px 0 20px 0;
 }
 .thumbnail iframe {
@@ -35,9 +36,10 @@ table thead , .modal-header {
 }
 /* Add a gray background color and some padding to the footer */
 footer {
-  margin-top:20px;
-  background-color: #f2f2f2;
-  padding: 25px;
+  margin-top:10px;
+  background-color: #222;
+  padding: 15px;
+  color:#fff;
 }
 table input[type="checkbox"] {
   position: relative !important;
@@ -46,11 +48,40 @@ table input[type="checkbox"] {
 .carousel-inner img {
   width: 100%; /* Set width to 100% */
   min-height: 200px;
+  height:400px;
+}
+.desc-post {
+  background:#222;
+  padding:10px 4px;
+  text-transform: uppercase;
+}
+.desc-post a {
+  color:#fff;
+}
+img.thumb-post {
+  max-width:100%;
+}
+.post-info {
+  margin:10px 0;
+  background: #fff;
+  padding:10px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28);
+}
+.post-name {
+  font-weight: 500;
+  font-size: 22px;
+}
+.post-author {
+  color:#737373;
 }
 /* Hide the carousel text when the screen is less than 600 pixels wide */
 @media (max-width: 600px) {
   .carousel-caption {
     display: none;
+  }
+  #homeCarousel {
+    max-height:250px;
+    overflow: hidden;
   }
 }
 @media (max-width: 600px) {
@@ -62,4 +93,8 @@ table input[type="checkbox"] {
 form#login {
   background:#fff;
   padding:20px;
+}
+
+input[name=uploadFiles] {
+  width:98%;
 }

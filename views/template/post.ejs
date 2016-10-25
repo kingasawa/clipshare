@@ -1,0 +1,19 @@
+<%- partial ('common/navbar.ejs') %>
+<div class="container">
+  <div id="main-post" class="col-sm-8">
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe class="embed-responsive-item" src="//www.youtube.com/embed/<%= source %>"></iframe>
+    </div>
+    <div class="row post-info">
+      <div class="col-sm-8">
+        <p class="post-name"><%= name %></p>
+        <p class="post-author">by Admin</p>
+      </div>
+      <div class="col-sm-4">
+        <p class="post-date pull-right">2 ngày trước</p>
+        <p class="post-view pull-right"><%= view %></p>
+      </div>
+    </div>
+  </div>
+  <div id="side-post" class="col-sm-4"></div>
+</div>

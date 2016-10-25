@@ -162,26 +162,16 @@ $(function() {
   });
 
   $('#uploadForm').submit(function(u){
-    $('#thumbnail').modal('hide');
+    $('#thumbnailModal').modal('hide');
+    $('button#uploadDone').text('  Uploaded Successful');
+    $('button#uploadDone').removeClass('btn-warning').addClass('btn-success')
   });
   socket.on('upload/thumbnail',function(data){
     $('#add-post-form input[name=thumbnail]').val(data.img);
-  })
+  });
 
   $('#add-post-form').submit(function(a) {
-    $('#addPostModal').modal('hide');
-    // var newdata = new FormData(this);
-    // $.ajax({
-    //   url: 'file/thumbnail',
-    //   data: newdata,
-    //   cache: false,
-    //   contentType: 'multipart/form-data',
-    //   processData: false,
-    //   type: 'POST',
-    //   success: function(result){
-    //     alert(result);
-    //   }
-    // });
+
     a.preventDefault();
     var data = $('#add-post-form').serialize();
     socket.get('/admin/postadd?' + data);
@@ -196,10 +186,10 @@ $(function() {
   });
 
   var getLink = window.location.href.substr().split("/");
-  if ( getLink[3]+'/'+getLink[4] =="admin/post") {
+  if ( getLink[3]+'/'+getLink[4] =="admin/newpost") {
     CKEDITOR.replace('add-content');
   } else if ( getLink[3]+'/'+getLink[4] =="admin/postid") {
-  CKEDITOR.replace('edit-content');
+    CKEDITOR.replace('edit-content');
   }
 
 });
@@ -223,6 +213,12 @@ function showMyImage(fileInput) {
     })(img);
     reader.readAsDataURL(file);
   }
+}
+
+function chooseImg(e) {
+  var thumbLink = $(e).find('img').attr('src');
+  $('#add-post-form input[name=thumbnail]').val(thumbLink);
+  $('#galleryModal').modal('hide')
 }
 
 function goBack() {

@@ -52,7 +52,9 @@ module.exports.routes = {
 
   '/get': {
     view: 'common/result'
-  }
+  },
+
+  '/admin/post/:i': 'AdminController.post'
 
   /***************************************************************************
    *                                                                          *
