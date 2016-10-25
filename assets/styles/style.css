@@ -3,6 +3,9 @@ body {
   background:#f1f1f1 !important;
   letter-spacing: 0.5px;
 }
+.homepage {
+  background:#2d2d2d;
+}
 a:hover {
   text-decoration: none !important;
 }
