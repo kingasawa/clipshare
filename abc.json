@@ -134,14 +134,14 @@
         "type": "1",
         "source": "Jr7FSMvmwBY",
         "content": "<p><strong>Nội dung</strong> : chưa có nội dung cho phim này</p>\r\n",
+        "featured": 0,
         "status": "1",
         "thumbnail": "/images/thumbnail/67df51b5-f91f-4df2-b0b6-2876fd53152a.jpg",
         "createdAt": "2016-10-24T22:49:17.830Z",
         "updatedAt": "2016-10-27T18:15:43.988Z",
         "id": 28,
         "time": 91,
-        "year": 2012,
-        "featured": 0
+        "year": 2012
       },
       {
         "cid": 10,
@@ -151,6 +151,12 @@
         "type": "1",
         "source": "_IdhVAsYirU",
         "content": "<p>giới thiệu , chưa c&oacute; nh&eacute;</p>\r\n",
+        "featured": 1,
+        "time": 90,
+        "year": 2017,
+        "cast": [
+          "khánh,cát,trần"
+        ],
         "status": "1",
         "thumbnail": "/images/thumbnail/5be22e18-5fad-40cf-887c-b3ec30bfd552.jpg",
         "createdAt": "2016-10-25T03:01:29.339Z",
@@ -165,6 +171,11 @@
         "type": "1",
         "source": "X2pDvt30J5U",
         "content": "<p>chưa c</p>\r\n",
+        "time": 90,
+        "year": 2017,
+        "cast": [
+          "khánh,cát,trần"
+        ],
         "featured": 0,
         "status": "1",
         "thumbnail": "/images/thumbnail/1067a6e5-5dc4-44e6-b69f-35856f5fabd5.jpg",
@@ -180,6 +191,11 @@
         "type": "1",
         "source": "syDf6IPCxM4",
         "content": "",
+        "time": 90,
+        "year": 2017,
+        "cast": [
+          "khánh,cát,trần"
+        ],
         "featured": 0,
         "status": "1",
         "thumbnail": "/images/thumbnail/d2001dc6-57c0-4e97-8281-6db619b4fbd3.jpg",
@@ -195,6 +211,11 @@
         "type": "2",
         "source": "https://redirector.googlevideo.com/videoplayback?requiressl=yes&id=36632bc213357201&itag=37&source=webdrive&ttl=transient&app=explorer&ip=125.212.241.142&ipbits=0&expire=1477550533&sparams=requiressl%2Cid%2Citag%2Csource%2Cttl%2Cip%2Cipbits%2Cexpire&signature=909F0FD15A419D38D944196BC5AC9BC3CDEBFC98.3D59BFA708B531E1696F7BA6F23C2738C2FEA7A2&key=ck2&mm=31&mn=sn-i3b7kne7&ms=au&mt=1477535991&mv=u&nh=IgpwcjA1LmhrZzAxKgkxMjcuMC4wLjE&pl=20",
         "content": "<p><strong>300</strong> l&agrave; bộ phim lịch sử t&aacute;i hiện cuộc chiến <strong>Thermopylae</strong> nổi tiếng k&eacute;o d&agrave;i 3 ng&agrave;y trong lịch sử Hy Lạp khi Vua Leonidas c&ugrave;ng 300 tinh binh Sparta đ&atilde; quyết tử đ&aacute;nh trả đạo qu&acirc;n Ba Tư khổng lồ gần 1 triệu qu&acirc;n do Vua Xerxes chỉ huy nhằm th&ocirc;n t&iacute;nh đất nước Hy Lạp.</p>\r\n",
+        "time": 90,
+        "year": 2017,
+        "cast": [
+          "khánh,cát,trần"
+        ],
         "featured": 0,
         "status": "1",
         "thumbnail": "/images/thumbnail/5bcf4785-5c58-469d-95df-c038ab198132.jpeg",

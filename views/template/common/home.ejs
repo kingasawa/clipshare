@@ -1,13 +1,13 @@
 
 
   <div id="featured" class="container-fluid">
-    <% _.each(foundPost, function(post) { %>
-    <a href="/post/view?id=<%= post.id %>">
+    <% _.each(featuredPost, function(featured) { %>
+    <a href="/post/view?id=<%= featured.id %>">
     <div class="col-md-2 col-xs-3 col-sm-3 featured-cat">
-        <img class="thumb-post" src="<%= post.thumbnail %>">
+        <img class="thumb-post" src="<%= featured.thumbnail %>">
         <!--Thumbnail 270x400-->
         <div class="desc-post">
-          <%= post.name %>
+          <%= featured.name %>
          </div>
       </div>
     </a>
@@ -16,9 +16,24 @@
 
 
 <div id="list-post" class="container col-sm-8">
-  <div class="panel panel-default">
-    <div class="panel-heading">PHIM HÀNH ĐỘNG</div>
-    <div class="panel-body">Panel Content</div>
+  <% _.each(allCategory, function(category) { %>
+    <div class="panel panel-default">
+      <div class="panel-heading"><%= category.name %></div>
+      <div class="panel-body">
+        <% _.each(category.posts, function(post) { %>
+        <a href="/post/view?id=<%= post.id %>">
+          <div class="col-md-3 col-xs-3 col-sm-3 featured-cat">
+            <img class="thumb-post" src="<%= post.thumbnail %>">
+            <!--Thumbnail 270x400-->
+            <div class="desc-post">
+              <%= post.name %>
+            </div>
+          </div>
+        </a>
+        <% }) %>
+      </div>
+    </div>
+  <% }) %>
   </div>
 </div>
 
