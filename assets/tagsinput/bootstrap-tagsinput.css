@@ -36,6 +36,8 @@
   box-shadow: none;
 }
 .bootstrap-tagsinput .tag {
+  background:#a94442;
+  font-size:12px;
   margin-right: 2px;
   color: white;
 }
