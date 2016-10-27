@@ -1,10 +1,9 @@
-<div class="col-sm-9 column-main">
-  <%- partial ('carousel.ejs') %>
+
 
   <div id="featured" class="container-fluid">
     <% _.each(foundPost, function(post) { %>
     <a href="/post/view?id=<%= post.id %>">
-    <div class="col-md-3 col-xs-3 col-sm-3 featured-cat">
+    <div class="col-md-2 col-xs-3 col-sm-3 featured-cat">
         <img class="thumb-post" src="<%= post.thumbnail %>">
         <!--Thumbnail 270x400-->
         <div class="desc-post">
@@ -14,10 +13,29 @@
     </a>
     <% }) %>
   </div>
-</div>
 
+  <div id="latest-post" class="container"></div>
 
-<div class="col-sm-3 column-right">
+<!--<div class="col-sm-3">-->
+  <!--<div class="input-group"><div class="input-group-btn">-->
 
-</div>
+      <!--<button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+        <!--<span class="caret"></span>-->
+        <!--<span class="sr-only">Toggle Dropdown</span>-->
+      <!--</button>-->
+      <!--<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">-->
+        <!--<li><a href="#">Tên phim</a></li>-->
+        <!--<li><a href="#">Tên diễn viên</a></li>-->
+        <!--<li><a href="#">Thể loại</a></li>-->
+      <!--</ul>-->
+    <!--</div>-->
+    <!--<input type="text" class="form-control" placeholder="Tìm kiếm phim" required>-->
+    <!--<div class="input-group-btn"><button type="button" class="btn btn-warning">Tìm</button></div>-->
+  <!--</div><hr>-->
+  <!--<div id="new-movie">-->
+    <!--<span>PHIM SẮP CHIẾU</span>-->
+    <!--<img style="max-width: 100%;" src="/images/3_84.jpg">-->
+  <!--</div>-->
+  <!--<div id="social"></div>-->
+<!--</div>-->
 

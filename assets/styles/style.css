@@ -6,6 +6,15 @@ body {
 .homepage  {
   background:#2d2d2d;
 }
+#manage_post_length , #manage_category_length , #manage_post_info , #manage_category_info {
+  float:left;
+}
+#manage_post_filter, #manage_category_filter, #manage_post_paginate , #manage_category_paginate {
+  float:right;
+}
+#main-post {
+  background: #171717;
+}
 .column-main {
   padding:0;
 }
@@ -18,6 +27,7 @@ table thead , .modal-header {
 }
 #page-cat_manager, #page-post_manager,#page-user_manager {
   background: #fff;
+  margin-bottom: 20px;
 }
 .navbar {
   margin-bottom: 15px;

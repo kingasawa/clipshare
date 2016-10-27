@@ -105,6 +105,7 @@ module.exports = {
       return res.badRequest('sai zồi')
     }
     let params = req.allParams();
+    console.log('edit params',params);
     Post.update({id:params.id},
       params).exec(function(err,result) {
       if (err) {
@@ -128,6 +129,7 @@ module.exports = {
       return res.badRequest('sai zồi')
     }
     let params = req.allParams();
+    console.log('new post',params);
     Post.create(params).exec(function(err,result) {
       if (err) {
         return res.negotiate(err)

@@ -10,10 +10,9 @@
   <table class="table table-inverse table-hover table-responsive" id="manage_post">
     <thead>
     <tr>
-      <th>ID</th>
+      <th>Image</th>
       <th>Name</th>
       <th>Description</th>
-      <th>Source</th>
       <th>Type</th>
       <th>Status</th>
       <th>Action</th>
@@ -22,10 +21,9 @@
     <tbody>
     <% _.each(allPost, function(post) { %>
     <tr>
-      <td class="post_id"><%= post.id %></td>
+      <td class="post_img"><img src="<%= post.thumbnail %>" width="100"></td>
       <td class="post_name"><%= post.name %></td>
       <td class="post_description"><%= post.description %></td>
-      <td class="post_source"><%= post.source %></td>
       <td class="post_content"><%= post.type %></td>
       <td class="post_status"><%= post.status %></td>
       <td class="post_submit col-md-3">

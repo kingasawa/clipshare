@@ -215,6 +215,11 @@ function showMyImage(fileInput) {
   }
 }
 
+$(document).ready(function() {
+  $('#manage_post').DataTable();
+  $('#manage_category').DataTable();
+} );
+
 function chooseImg(e) {
   var thumbLink = $(e).find('img').attr('src');
   $('#add-post-form input[name=thumbnail]').val(thumbLink);

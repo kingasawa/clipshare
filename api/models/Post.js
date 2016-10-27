@@ -26,6 +26,15 @@ module.exports = {
     content: {
       type: 'string'
     },
+    cast: {
+      type: 'array'
+    },
+    time: {
+      type: 'integer'
+    },
+    year: {
+      type: 'integer'
+    },
     view: {
       type: 'integer'
     },
