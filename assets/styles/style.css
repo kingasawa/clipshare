@@ -1,6 +1,6 @@
 /* Remove the navbar's default margin-bottom and rounded borders */
 body {
-  background:#2d2d2d !important;
+  background:#e2dede !important;
   letter-spacing: 0.5px;
 }
 .homepage  {
@@ -62,8 +62,8 @@ table input[type="checkbox"] {
   width: 100%; /* Set width to 100% */
 }
 .desc-post {
-  background:#222;
-  color:#a7a7a7;
+  background:#e2dede;
+  color:#333;
   font-size:14px;
   padding:10px 4px;
   font-weight:400;
@@ -76,9 +76,9 @@ img.thumb-post {
   max-width:100%;
 }
 #featured {
-  background:#191919;
+  background:#fff;
   padding:10px 0;
-  margin-top:-20px;
+  margin:-20px 0 20px 0;
 }
 .featured-cat {
   padding:0 5px;
