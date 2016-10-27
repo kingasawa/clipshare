@@ -1,14 +1,23 @@
-<%- partial ('carousel.ejs') %>
+<div class="col-sm-9 column-main">
+  <%- partial ('carousel.ejs') %>
 
-<div id="main-page" class="container-fluid">
-  <% _.each(foundPost, function(post) { %>
-  <a href="/post/view?id=<%= post.id %>">
-  <div class="col-md-2 col-xs-6 col-sm-3 onepost">
-      <img class="thumb-post" src="<%= post.thumbnail %>">
-      <div class="desc-post text-center"><a href="/post/view/<%= post.id %>"><strong><%= post.name %></strong></a></div>
+  <div id="featured" class="container-fluid">
+    <% _.each(foundPost, function(post) { %>
+    <a href="/post/view?id=<%= post.id %>">
+    <div class="col-md-3 col-xs-3 col-sm-3 featured-cat">
+        <img class="thumb-post" src="<%= post.thumbnail %>">
+        <!--Thumbnail 270x400-->
+        <div class="desc-post">
+          <%= post.name %>
+         </div>
+      </div>
+    </a>
+    <% }) %>
   </div>
-  </a>
-  <% }) %>
+</div>
+
+
+<div class="col-sm-3 column-right">
 
 </div>
 

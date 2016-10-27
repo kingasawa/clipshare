@@ -29,6 +29,12 @@ module.exports = {
     view: {
       type: 'integer'
     },
+    rate: {
+      type: 'integer'
+    },
+    featured: {
+      type: 'integer'
+    },
     cid: {
       model: 'category'
     },

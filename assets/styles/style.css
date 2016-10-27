@@ -1,10 +1,13 @@
 /* Remove the navbar's default margin-bottom and rounded borders */
 body {
-  background:#f1f1f1 !important;
+  background:#2d2d2d !important;
   letter-spacing: 0.5px;
 }
-.homepage {
+.homepage  {
   background:#2d2d2d;
+}
+.column-main {
+  padding:0;
 }
 a:hover {
   text-decoration: none !important;
@@ -15,22 +18,20 @@ table thead , .modal-header {
 }
 #page-cat_manager, #page-post_manager,#page-user_manager {
   background: #fff;
-
 }
 .navbar {
   margin-bottom: 15px;
   border-radius: 0;
- }
+}
 .sidenav {
   padding-top: 20px;
   background-color: #f1f1f1;
 }
-
 .jumbotron {
   background:#4b8c95;
   color:#f5e1ca !important;
 }
-#homeCarousel,.carousel-inner {
+#homeCarousel,.carousel-inner , .column-right {
 
   margin:-15px 0 20px 0;
 }
@@ -47,23 +48,32 @@ footer {
 table input[type="checkbox"] {
   position: relative !important;
 }
-
 .carousel-inner img {
   width: 100%; /* Set width to 100% */
-
 }
 .desc-post {
   background:#222;
+  color:#a7a7a7;
+  font-size:14px;
   padding:10px 4px;
-  text-transform: uppercase;
+  font-weight:400;
 }
-.desc-post a {
-  color:#fff;
+.fb-comments {
+  margin-bottom:20px;
+  background: #fff;
 }
 img.thumb-post {
   max-width:100%;
 }
-.post-info {
+#featured {
+  background:#191919;
+  padding:10px 0;
+  margin-top:-20px;
+}
+.featured-cat {
+  padding:0 5px;
+}
+.post-info , .fb-comments {
   margin:10px 0;
   background: #fff;
   padding:10px;
@@ -85,6 +95,9 @@ img.thumb-post {
     padding-right: 0 !important;
     padding-left: 0 !important;
   }
+  .desc-post {
+    font-size:8px;
+  }
 }
 @media (max-width: 1100px) {
 
@@ -93,7 +106,6 @@ form#login {
   background:#fff;
   padding:20px;
 }
-
 input[name=uploadFiles] {
   width:98%;
 }

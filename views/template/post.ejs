@@ -1,3 +1,4 @@
+<div class="post-page">
 <%- partial ('common/navbar.ejs') %>
 <div class="container">
   <div id="main-post" class="col-sm-8">
@@ -15,11 +16,26 @@
       </div>
       <div class="col-sm-4">
         <p class="post-date pull-right">2 ngày trước</p>
-        <p class="post-view pull-right"><%= view %></p>
+        <p class="post-view pull-right"><button data-toggle="collapse" data-target="#demo">View Comment</button></p>
       </div>
     </div>
+
+
+    <div id="demo" class="collapse">
+      <div id="fb-comments" class="fb-comments col-sm-12" data-href="http://vnmagic.net" data-width="100%" data-numposts="5"></div>
+    </div>
+
   </div>
   <div id="side-post" class="col-sm-4"></div>
 </div>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=343633113334";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
 
 
+</div>
