@@ -1,4 +1,4 @@
-var path = window.location.pathname;
+
 $(function() {
   var socket = io.sails.connect();
   socket.get('/socket');
@@ -197,15 +197,17 @@ $(function() {
 
   }
 
-  path = path.replace(/\/$/, "");
-  path = decodeURIComponent(path);
+
 // Script to add active class on menu
   $(".navbar-left li a").each(function() {
+    var path = $(location).attr('pathname');
+    var param = $(location).attr('search');
+    var currentUrl = path+''+param;
     var href = $(this).attr('href').trim();
-    var currentURI = path.substring((path.lastIndexOf('/') + 1), path.length);
-    currentURI = currentURI.replace(/^\//, "");
-    href = href.replace(/^\//, "");
-    if (currentURI === href) {
+    // var currentURI = path.substring((path.lastIndexOf('/') + 1), path.length);
+    // currentURI = currentURI.replace(/^\//, "");
+    // href = href.replace(/^\//, "");
+    if (currentUrl === href) {
       $(this).closest('li').addClass('active');
     } else {
       $(this).closest('li').removeClass();

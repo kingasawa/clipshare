@@ -16,7 +16,7 @@ body {
 }
 #navbar .navbar-nav > .active > a {
   background-color: #f8f8f8 !important;
-  border-bottom:3px solid #f5f5f5;
+  border-bottom:3px solid #de5448;
   color:#de5448;
   font-weight: 500;
 }
@@ -182,8 +182,11 @@ span.desc-post {
     font-size:10px;
   }
 }
-@media (max-width: 1100px) {
-
+@media (max-width: 1024px) {
+  .container {
+    padding-right: 5px !important;
+    padding-left: 5px !important;
+  }
 }
 form#login {
   background:#fff;

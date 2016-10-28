@@ -20,7 +20,7 @@
             <p>
               <span class="time-post"><i class="fa fa-clock-o"></i> <%= result.time %> phút</span>
               <span class="year-post"><i class="fa fa-calendar"></i> <%= result.year %></span>
-              <span class="view-post"><i class="fa fa-eye"></i> 345 views </span>
+              <span class="view-post"><i class="fa fa-eye"></i> <%= result.view %> views </span>
             </p>
             <p></p>
           </div>
@@ -45,7 +45,7 @@
           <div class="panel-heading"><i class="fa fa-film"></i> 5 LATEST MOVIES</div>
           <div class="panel-body">
             <% _.each(fivePost, function(latestpost) { %>
-            <a href="//post/view?id=<%= latestpost.id %>">
+            <a href="/post/view?id=<%= latestpost.id %>">
               <div class="media featured-name">
                 <div class="media-left">
                   <img src="<%= latestpost.thumbnail %>" class="media-object" style="width:80px">
@@ -55,7 +55,7 @@
                   <p><%= latestpost.description %></p>
                   <p><i class="fa fa-clock-o"></i> <%= latestpost.time %></p>
                   <p><i class="fa fa-calendar"></i> <%= latestpost.year %></p>
-                  <p><i class="fa fa-eye"></i> 345 views</p>
+                  <p><i class="fa fa-eye"></i> <%= latestpost.view %> views</p>
                 </div>
               </div></a><hr>
             <% }) %>

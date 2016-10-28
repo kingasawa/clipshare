@@ -20,7 +20,7 @@
       </div>
       <div class="panel-footer text-center">
         <ul class="pagination">
-          <li><a href="#">1</a></li>
+          <li><a href="/category/view?id=<%= foundCategory.id %>&page=1&name=<%= foundCategory.name %>">1</a></li>
           <li class="active"><a href="#">2</a></li>
           <li><a href="#">3</a></li>
           <li><a href="#">4</a></li>
@@ -46,7 +46,7 @@
               <p><%= latestpost.description %></p>
               <p><i class="fa fa-clock-o"></i> <%= latestpost.time %></p>
               <p><i class="fa fa-calendar"></i> <%= latestpost.year %></p>
-              <p><i class="fa fa-eye"></i> 345 views</p>
+              <p><i class="fa fa-eye"></i> <%= latestpost.view %> views</p>
             </div>
           </div></a><hr>
         <% }) %>

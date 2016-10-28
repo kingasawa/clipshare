@@ -36,10 +36,12 @@ module.exports = {
       type: 'integer'
     },
     view: {
-      type: 'integer'
+      type: 'integer',
+      defaultsTo: 0
     },
     rate: {
-      type: 'integer'
+      type: 'integer',
+      defaultsTo: 0
     },
     featured: {
       type: 'integer'

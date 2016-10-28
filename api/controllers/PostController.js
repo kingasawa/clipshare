@@ -25,6 +25,10 @@ module.exports = {
           if (err) {
             return res.negotiate(err)
           }
+          let updateView = result.view+1;
+          Post.update({id:params.id},{view:updateView}).exec(function(err,done){
+            //do something
+          });
           res.view('template/post',{result,allCategory,fivePost})
         })
       })

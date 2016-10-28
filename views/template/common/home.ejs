@@ -18,7 +18,7 @@
         <div class="panel-heading"><i class="fa fa-film"></i> PHIM MỚI CẬP NHẬT</div>
         <div class="panel-body">
           <% _.each(allPost, function(post) { %>
-          <a href="/post/view?id=<%= post.id %>">
+          <a href="/post/view?id=<%= post.id %>&name=<%= post.name %>">
             <div class="col-md-3 col-xs-3 col-sm-3 new-post">
               <img class="thumb-post" src="<%= post.thumbnail %>">
               <!--Thumbnail 270x400-->
@@ -32,7 +32,7 @@
         </div>
         <div class="panel-footer text-center">
           <ul class="pagination">
-            <li><a href="#">1</a></li>
+            <li><a href="&page=1">1</a></li>
             <li class="active"><a href="#">2</a></li>
             <li><a href="#">3</a></li>
             <li><a href="#">4</a></li>
@@ -63,7 +63,7 @@
               <p><%= featured.description %></p>
               <p><i class="fa fa-clock-o"></i> <%= featured.time %></p>
               <p><i class="fa fa-calendar"></i> <%= featured.year %></p>
-              <p><i class="fa fa-eye"></i> 345 views</p>
+              <p><i class="fa fa-eye"></i> <%= featured.view %> views</p>
             </div>
           </div></a>
           <% }) %>
