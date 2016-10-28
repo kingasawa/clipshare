@@ -50,15 +50,7 @@ module.exports = {
           resolve(allPost);
         })
       }
-      });
-    // } else {
-    //   let findAllPost = new Promise((resolve, reject) => {
-    //     Post.find().paginate({page:params.page,limit:postLimit}).exec((err, allPost) => {
-    //       if (err) {reject(err)}
-    //       resolve(allPost);
-    //     })
-    //   });
-    // }
+    });
     // Solve all using Async/Await
     (async () => {
       var [featuredPost,allCategory,allPost] = await Promise.all([

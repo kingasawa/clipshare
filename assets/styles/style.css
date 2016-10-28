@@ -1,6 +1,6 @@
 /* Remove the navbar's default margin-bottom and rounded borders */
 body {
-  background:#e2dede !important;
+  background:#ececec !important;
   letter-spacing: 0.5px;
 }
 .homepage  {
@@ -13,7 +13,7 @@ body {
   float:right;
 }
 #main-post {
-  background: #171717;
+  background: #e1e1e1;
 }
 .column-main {
   padding:0;
@@ -61,12 +61,14 @@ table input[type="checkbox"] {
 .carousel-inner img {
   width: 100%; /* Set width to 100% */
 }
-.desc-post {
-  background:#e2dede;
+.name-post {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background:#f0f0f0;
   color:#333;
   font-size:14px;
   padding:10px 4px;
-  font-weight:400;
 }
 .fb-comments {
   margin-bottom:20px;
@@ -80,8 +82,11 @@ img.thumb-post {
   padding:10px 0;
   margin:-20px 0 20px 0;
 }
-.featured-cat {
+.featured-cat, .new-post {
   padding:0 5px;
+}
+.new-post {
+  margin-bottom: 15px;
 }
 .post-info , .fb-comments {
   margin:10px 0;
@@ -96,6 +101,14 @@ img.thumb-post {
 .post-author {
   color:#737373;
 }
+span.desc-post {
+  width: 100%;
+  float:left;
+  font-size:12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color:#606060;
+}
 /* Hide the carousel text when the screen is less than 600 pixels wide */
 @media (max-width: 600px) {
   .carousel-caption {
@@ -105,7 +118,7 @@ img.thumb-post {
     padding-right: 0 !important;
     padding-left: 0 !important;
   }
-  .desc-post {
+  .name-post {
     font-size:8px;
   }
 }
