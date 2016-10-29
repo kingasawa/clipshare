@@ -54,7 +54,8 @@ module.exports.routes = {
     view: 'common/result'
   },
 
-  '/admin/post/:i': 'AdminController.post'
+  '/admin/post/:i': 'AdminController.post',
+  '/imdb':'ImdbController.title'
 
   /***************************************************************************
    *                                                                          *

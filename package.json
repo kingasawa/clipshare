@@ -19,10 +19,12 @@
     "grunt-contrib-watch": "0.5.3",
     "grunt-sails-linker": "~0.10.1",
     "grunt-sync": "0.2.4",
+    "imdb-api": "^2.2.0",
     "include-all": "~0.1.6",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
     "rc": "1.0.1",
+    "request": "^2.76.0",
     "sails": "~0.12.3",
     "sails-disk": "~0.10.9"
   },
