@@ -1,3 +1,4 @@
+var path = window.location.pathname;
 $(function() {
   var socket = io.sails.connect();
   socket.get('/socket');
@@ -196,6 +197,21 @@ $(function() {
 
   }
 
+  path = path.replace(/\/$/, "");
+  path = decodeURIComponent(path);
+// Script to add active class on menu
+  $(".navbar-left li a").each(function() {
+    var href = $(this).attr('href').trim();
+    var currentURI = path.substring((path.lastIndexOf('/') + 1), path.length);
+    currentURI = currentURI.replace(/^\//, "");
+    href = href.replace(/^\//, "");
+    if (currentURI === href) {
+      $(this).closest('li').addClass('active');
+    } else {
+      $(this).closest('li').removeClass();
+    }
+  });
+
 });
 
 // Image Upload with preview
@@ -239,4 +255,3 @@ $('#post-content .panel-body').each(function(){
   var t = $this.text();
   $this.html(t.replace('&lt','<').replace('&gt', '>').replace(/\\r\\n/g, '<br />').replace(new RegExp("\\\\", "g"), ""));
 });
-
