@@ -1,41 +1,79 @@
 <div class="post-page">
-<%- partial ('common/navbar.ejs') %>
-<div class="container">
-  <div id="main-post" class="col-sm-8">
-    <div class="embed-responsive embed-responsive-16by9">
-      <% if (type==1) { %>
-      <iframe class="embed-responsive-item" src="//www.youtube.com/embed/<%= source %>"></iframe>
-      <% } else { %>
-      <video controls><source src="<%= source %>" type="video/mp4"></video>
-      <% } %>
-    </div>
-    <div class="row post-info">
-      <div class="col-sm-8">
-        <p class="post-name"><%= name %></p>
-        <p class="post-author">by Admin</p>
+  <%- partial ('common/navbar.ejs') %>
+  <div class="container">
+    <div id="main-post" class="col-sm-8">
+      <div class="embed-responsive embed-responsive-16by9">
+        <% if (result.type==1) { %>
+        <iframe class="embed-responsive-item" src="//www.youtube.com/embed/<%= result.source %>"></iframe>
+        <% } else { %>
+        <video controls><source src="<%= result.source %>" type="video/mp4"></video>
+        <% } %>
       </div>
-      <div class="col-sm-4">
-        <p class="post-date pull-right">2 ngày trước</p>
-        <p class="post-view pull-right"><button data-toggle="collapse" data-target="#demo">View Comment</button></p>
+      <div class="row post-info">
+        <div class="media">
+          <div class="media-left">
+            <img src="<%= result.thumbnail %>" class="media-object" style="width:80px">
+          </div>
+          <div class="media-body">
+            <h3 class="media-heading"><%= result.name %></h3>
+            <p><%= result.description %></p>
+            <p>
+              <span class="time-post"><i class="fa fa-clock-o"></i> <%= result.time %> phút</span>
+              <span class="year-post"><i class="fa fa-calendar"></i> <%= result.year %></span>
+              <span class="view-post"><i class="fa fa-eye"></i> 345 views </span>
+            </p>
+            <p></p>
+          </div>
+        </div>
       </div>
+
+      <!--//nội dung phim-->
+      <div id="post-content" class="panel panel-default">
+        <div class="panel-heading">NỘI DUNG PHIM</div>
+        <div class="panel-body"><%= result.content.replace('&lt;', '<').replace('&gt;', '>') %></div>
+      </div>
+
+      <div id="demo" class="collapse">
+        <div id="fb-comments" class="fb-comments col-sm-12" data-href="http://vnmagic.net" data-width="100%" data-numposts="5"></div>
+      </div>
+
     </div>
 
+      <div id="column-right" class="col-sm-4">
+        <div class="panel panel-default">
 
-    <div id="demo" class="collapse">
-      <div id="fb-comments" class="fb-comments col-sm-12" data-href="http://vnmagic.net" data-width="100%" data-numposts="5"></div>
-    </div>
+          <div class="panel-heading"><i class="fa fa-film"></i> 5 LATEST MOVIES</div>
+          <div class="panel-body">
+            <% _.each(fivePost, function(latestpost) { %>
+            <a href="//post/view?id=<%= latestpost.id %>">
+              <div class="media featured-name">
+                <div class="media-left">
+                  <img src="<%= latestpost.thumbnail %>" class="media-object" style="width:80px">
+                </div>
+                <div class="media-body">
+                  <h5 class="media-heading"><%= latestpost.name %></h5>
+                  <p><%= latestpost.description %></p>
+                  <p><i class="fa fa-clock-o"></i> <%= latestpost.time %></p>
+                  <p><i class="fa fa-calendar"></i> <%= latestpost.year %></p>
+                  <p><i class="fa fa-eye"></i> 345 views</p>
+                </div>
+              </div></a><hr>
+            <% }) %>
+          </div>
+        </div>
+      </div>
 
   </div>
-  <div id="side-post" class="col-sm-4"></div>
-</div>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=343633113334";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));</script>
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=343633113334";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 
 
 </div>
+
+<!--<p class="post-view pull-right"><button data-toggle="collapse" data-target="#demo">View Comment</button></p>-->

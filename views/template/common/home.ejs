@@ -1,54 +1,74 @@
+<!--<div id="featured" class="container-fluid">-->
+    <!--<% _.each(featuredPost, function(featured) { %>-->
+    <!--<a href="/post/view?id=<%= featured.id %>">-->
+    <!--<div class="col-md-2 col-xs-3 col-sm-3 featured-cat">-->
+        <!--<img class="thumb-post" src="<%= featured.thumbnail %>">-->
+        <!--&lt;!&ndash;Thumbnail 270x400&ndash;&gt;-->
+        <!--<div class="name-post">-->
+          <!--<%= featured.name %>-->
+         <!--</div>-->
+      <!--</div>-->
+    <!--</a>-->
+    <!--<% }) %>-->
+<!--</div>-->
 
-
-  <div id="featured" class="container-fluid">
-    <% _.each(featuredPost, function(featured) { %>
-    <a href="/post/view?id=<%= featured.id %>">
-    <div class="col-md-2 col-xs-3 col-sm-3 featured-cat">
-        <img class="thumb-post" src="<%= featured.thumbnail %>">
-        <!--Thumbnail 270x400-->
-        <div class="name-post">
-          <%= featured.name %>
-         </div>
-      </div>
-    </a>
-    <% }) %>
-  </div>
-
-
-<div id="list-post" class="container col-sm-8">
-    <div class="panel panel-default">
-      <div class="panel-heading">PHIM MỚI CẬP NHẬT</div>
-      <div class="panel-body">
-        <% _.each(allPost, function(post) { %>
-        <a href="/post/view?id=<%= post.id %>">
-          <div class="col-md-3 col-xs-3 col-sm-3 new-post">
-            <img class="thumb-post" src="<%= post.thumbnail %>">
-            <!--Thumbnail 270x400-->
-            <div class="name-post">
-              <%= post.name %>
-              <span class="desc-post"><%= post.description %></span>
+<div class="container">
+  <div id="list-post" class="col-sm-8">
+      <div class="panel panel-default">
+        <div class="panel-heading"><i class="fa fa-film"></i> PHIM MỚI CẬP NHẬT</div>
+        <div class="panel-body">
+          <% _.each(allPost, function(post) { %>
+          <a href="/post/view?id=<%= post.id %>">
+            <div class="col-md-3 col-xs-3 col-sm-3 new-post">
+              <img class="thumb-post" src="<%= post.thumbnail %>">
+              <!--Thumbnail 270x400-->
+              <div class="name-post">
+                <%= post.name %>
+                <span class="desc-post"><%= post.description %></span>
+              </div>
             </div>
-          </div>
-        </a>
-        <% }) %>
+          </a>
+          <% }) %>
+        </div>
+        <div class="panel-footer text-center">
+          <ul class="pagination">
+            <li><a href="#">1</a></li>
+            <li class="active"><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="panel-footer text-center">
-        <ul class="pagination">
-          <li><a href="#">1</a></li>
-          <li class="active"><a href="#">2</a></li>
-          <li><a href="#">3</a></li>
-          <li><a href="#">4</a></li>
-          <li><a href="#">5</a></li>
-        </ul>
-      </div>
-    </div>
-</div>
-
-  <div id="column-right" class="row container col-sm-4">
-    <div class="panel panel-default">
-      <div class="panel-heading">column-right</div>
-      <div class="panel-body">body</div>
-    </div>
   </div>
-
+  <div id="column-right" class="col-sm-4">
+      <div class="panel panel-default">
+        <div class="panel-heading"><i class="fa fa-search"></i> SEARCH MOVIES</div>
+        <div id="search" class="panel-body">
+          <div class="form-group has-feedback">
+            <input type="text" class="form-control" placeholder="Input keyword" />
+            <i class="glyphicon glyphicon-film form-control-feedback"></i>
+          </div><hr>
+        </div>
+        <div class="panel-heading"><i class="fa fa-film"></i> FEATURED MOVIES</div>
+        <div class="panel-body">
+          <% _.each(featuredPost, function(featured) { %>
+          <a href="/post/view?id=<%= featured.id %>">
+          <div class="media featured-name">
+            <div class="media-left">
+              <img src="<%= featured.thumbnail %>" class="media-object" style="width:80px">
+            </div>
+            <div class="media-body">
+              <h5 class="media-heading"><%= featured.name %></h5>
+              <p><%= featured.description %></p>
+              <p><i class="fa fa-clock-o"></i> <%= featured.time %></p>
+              <p><i class="fa fa-calendar"></i> <%= featured.year %></p>
+              <p><i class="fa fa-eye"></i> 345 views</p>
+            </div>
+          </div></a>
+          <% }) %>
+        </div>
+      </div>
+  </div>
+</div>
 

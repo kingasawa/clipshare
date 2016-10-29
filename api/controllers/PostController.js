@@ -7,21 +7,27 @@
 
 module.exports = {
   index: (req,res) => {
-    Post.find(function(err,result) {
-      if (err) {
-        return res.negotiate(err)
-      }
-      res.view('template/admin/post/index',result)
+    Category.find(function(err,allCategory) {
+      Post.find(function(err,result) {
+        if (err) {
+          return res.negotiate(err)
+        }
+        res.view('template/admin/post/index',{result,allCategory})
+      })
     })
   },
 
   view: (req,res) => {
     let params = req.allParams();
-    Post.findOne({id:params.id}).exec(function(err,result) {
-      if (err) {
-        return res.negotiate(err)
-      }
-      res.view('template/post',result)
+    Category.find(function(err,allCategory) {
+      Post.find({limit:5}).exec(function(err,fivePost) {
+        Post.findOne({id: params.id}).exec(function (err,result) {
+          if (err) {
+            return res.negotiate(err)
+          }
+          res.view('template/post',{result,allCategory,fivePost})
+        })
+      })
     })
   },
 

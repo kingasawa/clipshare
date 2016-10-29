@@ -192,6 +192,10 @@ $(function() {
     CKEDITOR.replace('edit-content');
   }
 
+  if ( getLink[3]+'/'+getLink[4] =="category/view") {
+
+  }
+
 });
 
 // Image Upload with preview
@@ -229,3 +233,10 @@ function chooseImg(e) {
 function goBack() {
   window.history.back();
 }
+
+$('#post-content .panel-body').each(function(){
+  var $this = $(this);
+  var t = $this.text();
+  $this.html(t.replace('&lt','<').replace('&gt', '>').replace(/\\r\\n/g, '<br />').replace(new RegExp("\\\\", "g"), ""));
+});
+

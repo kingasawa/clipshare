@@ -16,13 +16,16 @@ module.exports = {
   },
 
   view: (req,res) => {
-    let id = req.params.id;
-    Category.findOne({id:id}).exec(function(err,foundCategory) {
-      if (err) {
-        return res.negotiate(err)
-      }
-      res.view('template/category/view',foundCategory)
+    let params = req.allParams();
+    Category.find(function(err,allCategory) {
+      Post.find({limit: 5}).exec(function (err, fivePost) {
+        Category.findOne({id: params.id}).populate('posts').exec(function (err, foundCategory) {
+          if (err) {
+            return res.negotiate(err)
+          }
+          res.view('template/category', {foundCategory, fivePost, allCategory})
+        })
+      })
     })
   }
-
 };
