@@ -9,10 +9,10 @@
       <a class="navbar-brand glyphicon glyphicon-heart" href="#"></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav navbar-left">
         <li class="nav-home active"><a href="/home">Home</a></li>
         <% _.each(allCategory,function(category){%>
-        <li class="<%= category.name %>"><a href="/category/view?id=<%= category.id %>"><%= category.name %></a></li>
+        <li><a href="/category/view?id=<%= category.id %>"><%= category.name %></a></li>
         <% }) %>
       </ul>
       <% if(!req.session.user_id){ %>
