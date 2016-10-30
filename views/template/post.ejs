@@ -22,6 +22,9 @@
               <span class="year-post"><i class="fa fa-calendar"></i> <%= result.year %></span>
               <span class="view-post"><i class="fa fa-eye"></i> <%= result.view %> views </span>
             </p>
+            <p>
+              <a class="btn btn-warning btn-sm" href="#"><i class="fa fa-star"></i> <%= result.rate %></a>
+            </p>
             <p></p>
           </div>
         </div>
@@ -31,6 +34,10 @@
       <div id="post-content" class="panel panel-default">
         <div class="panel-heading">NỘI DUNG PHIM</div>
         <div class="panel-body"><%= result.content.replace('&lt;', '<').replace('&gt;', '>') %></div>
+        <div class="panel-footer">
+          <p><a class="btn btn-default btn-sm" href="#"><i class="fa fa-bullhorn"></i> Director</a> <%= result.director %></p>
+          <p><a class="btn btn-default btn-sm" href="#"><i class="fa fa-users"></i> Actor</a> <%= result.cast %></p>
+        </div>
       </div>
 
       <div id="demo" class="collapse">

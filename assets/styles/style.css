@@ -16,13 +16,12 @@ body {
 }
 #navbar .navbar-nav > .active > a {
   background-color: #f8f8f8 !important;
-  border-bottom:3px solid #de5448;
+  border-bottom:4px solid #de5448;
   color:#de5448;
   font-weight: 500;
+  padding:13px;
 }
-#navbar ul li:hover {
-  border-bottom:3px solid #de5448;
-}
+
 #navbar ul li:hover > a{
   color: #de5448;
 }
@@ -35,9 +34,6 @@ body {
   font-weight: 300;
   font-size: 16px;
   letter-spacing: 1.2px !important;
-}
-.panel-footer {
-  padding: 0 15px;
 }
 .pagination > li > a, .pagination > li > span {
   color:#de5448;
@@ -195,7 +191,43 @@ form#login {
 input[name=uploadFiles] {
   width:98%;
 }
+.form-control-feedback {
+  color:#de5448;
+}
 
+div#search-result-fail {
+  color:#de5448;
+}
+
+.hvr-underline-from-center {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  position: relative;
+  overflow: hidden;
+}
+.hvr-underline-from-center:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  background: #de5448;
+  height: 4px;
+  -webkit-transition-property: left, right;
+  transition-property: left, right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-underline-from-center:hover:before, .hvr-underline-from-center:focus:before, .hvr-underline-from-center:active:before {
+  left: 0;
+  right: 0;
+}
 /*!*Hover effect*!*/
 /*.hovereffect {*/
   /*float: left;*/

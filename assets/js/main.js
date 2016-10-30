@@ -172,7 +172,6 @@ $(function() {
   });
 
   $('#add-post-form').submit(function(a) {
-
     a.preventDefault();
     var data = $('#add-post-form').serialize();
     socket.get('/admin/postadd?' + data);
@@ -212,6 +211,61 @@ $(function() {
     } else {
       $(this).closest('li').removeClass();
     }
+  });
+
+
+  // page onload
+  $(document).ready(function() {
+    $(window).keydown(function(event){
+      if(event.keyCode == 13) {
+        event.preventDefault();
+        return false;
+      }
+    });
+
+  });
+
+  $('#imdb').ready(function() {
+    $('button[name=add-new]').addClass('disabled');
+    $('label[name=imdb-title]').css('color','#a94442');
+    $('input#imdb').css({'color':'#a94442'});
+    $('#icon_search').show();
+    $('#icon_done').hide();
+    $('#icon_load').hide();
+  });
+
+  $('#imdb').keyup(function () {
+    $('#icon_search').hide();
+    $('#icon_done').hide();
+    $('#icon_load').show();
+    if ($('#imdb').val().length == 9) {
+      $('button[name=add-new]').removeClass('disabled');
+      var imdbTitle = $('#imdb').val();
+      socket.get('/imdb/search?imdb=' + imdbTitle);
+    }
+  });
+
+  $('#search-form').submit(function(a) {
+    a.preventDefault();
+    var keySearch = $('#search-key').serialize();
+    console.log(keySearch);
+    socket.get('/post/search?' + keySearch);
+    window.location.href = '/post/search?'+keySearch
+  });
+
+  socket.on('search/imdb',function(recieve) {
+    $('#icon_search').hide();
+    $('#icon_done').show();
+    $('#icon_load').hide();
+    $('label[name=imdb-title]').css('color','#3f8040');
+    $('input#imdb').css({'color':'#3f8040'});
+    $('#description').val(recieve.data.title);
+    $('#time').val(recieve.data.runtime);
+    $('#year').val(recieve.data.year);
+    $('#director').val(recieve.data.director);
+    $('#cast').val(recieve.data.actors);
+    $('#thumbInput').val(recieve.data.poster);
+    $('#rate').val(recieve.data.rating);
   });
 
 });
@@ -257,3 +311,5 @@ $('#post-content .panel-body').each(function(){
   var t = $this.text();
   $this.html(t.replace('&lt','<').replace('&gt', '>').replace(/\\r\\n/g, '<br />').replace(new RegExp("\\\\", "g"), ""));
 });
+
+

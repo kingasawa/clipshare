@@ -69,6 +69,23 @@ module.exports = {
       }
       res.json(result)
     })
+  },
+
+  search: (req,res) => {
+    let params = req.allParams();
+    Post.find({
+      name:{'contains':params.keyword}
+    }).exec(function(err,searchPost) {
+      if (!searchPost) {
+        res.negotiate('Không tìm thấy phim')
+      } else {
+        Category.find(function(err,allCategory) {
+          Post.find({limit:5}).exec(function(err,fivePost) {
+            res.view('template/search', {searchPost,allCategory,fivePost})
+          })
+        })
+      }
+    })
   }
 
 };

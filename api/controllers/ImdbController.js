@@ -4,10 +4,10 @@
  * @description :: Server-side logic for managing imdbs
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
-var request = require('request');
+// var request = require('request');
 var imdb = require('imdb-api');
 module.exports = {
-	title : (req,res) => {
+	search : (req,res) => {
     // request.get({
     //   url: 'http://www.imdb.com/title/tt1300854/'
     // },function(error,response,body){
@@ -17,10 +17,11 @@ module.exports = {
     //   console.log(body);
     //   res.send(body)
     // })
-    var movie;
-    imdb.getById('tt0090190', function(err, things) {
+    let params = req.allParams();
+    let movie;
+    imdb.getById(params.imdb, function(err, things) {
       movie = things;
-      console.log(movie)
+      sails.sockets.blast('search/imdb',{data:movie})
     });
   }
 };

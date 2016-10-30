@@ -14,6 +14,9 @@ module.exports = {
     description: {
       type: 'string'
     },
+    imdb : {
+      type: 'string'
+    },
     type: {
       type: 'string'
     },
@@ -25,6 +28,9 @@ module.exports = {
     },
     content: {
       type: 'string'
+    },
+    director: {
+      type: 'array'
     },
     cast: {
       type: 'array'
@@ -40,8 +46,8 @@ module.exports = {
       defaultsTo: 0
     },
     rate: {
-      type: 'integer',
-      defaultsTo: 0
+      type: 'string',
+      defaultsTo: '0'
     },
     featured: {
       type: 'integer'
