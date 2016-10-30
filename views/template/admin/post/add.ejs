@@ -9,6 +9,7 @@
       </div>
       <div class="modal-body">
         <form class="form-horizontal" id="add-post-form">
+          <div class="form-group"><div class="col-sm-6">
           <div class="form-group">
             <label class="control-label col-sm-2" for="category">Category:</label>
             <div class="col-sm-10">
@@ -26,12 +27,7 @@
               <input type="text" class="form-control" name="name" id="name" placeholder="Enter name" required>
             </div>
           </div>
-          <div class="form-group">
-            <label class="control-label col-sm-2" for="description">Description:</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" name="description" id="description" placeholder="Enter description">
-            </div>
-          </div>
+
           <div class="form-group">
             <label class="control-label col-sm-2" for="type">Type:</label>
             <div class="col-sm-10">
@@ -47,55 +43,9 @@
               <input type="text" class="form-control" name="source" id="source" placeholder="Enter source" required>
             </div>
           </div>
-          <div class="form-group has-feedback">
-            <label class="control-label col-sm-2" name="imdb-title" for="imdb">IMDB Title:</label>
-            <div class="col-sm-10">
-              <div class="input-group">
-              <input type="text" class="form-control" name="imdb" id="imdb" placeholder="Enter IMDB Title" required>
-              <div class="input-group-addon">
-                <i id="icon_search" class="fa fa-search"></i>
-                <i id="icon_load" class="fa fa-spinner fa-pulse fa-1x fa-fw"></i>
-                <i id="icon_done" class="fa fa-check"></i>
-              </div>
-            </div>
-              </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-sm-2" for="content">Content:</label>
-            <div class="col-sm-10">
-              <textarea class="form-control" name="content" id="add-content" value=""></textarea>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-sm-2" for="Time">Time:</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" name="time" id="time" placeholder="Enter time">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-sm-2" for="year">Year:</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" name="year" id="year" placeholder="Enter year">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-sm-2" for="director">Director:</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" name="director" id="director" placeholder="Enter director">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-sm-2" for="cast">Cast:</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" name="cast" id="cast" placeholder="Enter cast">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-sm-2" for="rate">Rating:</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" name="rate" id="rate" placeholder="Enter rate">
-            </div>
-          </div>
+
+
+
           <div class="form-group">
             <label class="control-label col-sm-2" for="featured">Featured:</label>
             <div class="col-sm-10">
@@ -114,26 +64,95 @@
               </select>
             </div>
           </div>
-          <div class="form-group">
-            <label class="control-label col-sm-2" for="file">Thumbnail:</label>
-            <div class="col-sm-10">
-              <div class="input-group">
-                <input type="text" class="form-control" name="thumbnail" id='thumbInput' value="">
-                <div class="input-group-btn">
-                  <button id="gallery" type="button" class="btn btn-primary" data-toggle="modal" data-target="#galleryModal">
-                    <i class="fa fa-picture-o"></i>  Gallery</button>
-                  <button id="uploadDone" type="button" class="btn btn-warning" data-toggle="modal" data-target="#thumbnailModal">
-                    <i class="fa fa-picture-o"></i>  Upload</button>
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="content">Content:</label>
+                <div class="col-sm-10">
+                  <button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#demo">Click here</button>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group has-feedback">
+                <label class="control-label col-sm-3" name="imdb-title" for="imdb">IMDB Title:</label>
+                <div class="col-sm-9">
+                  <div class="input-group">
+                    <input type="text" class="form-control" name="imdb" id="imdb" placeholder="Enter IMDB Title" required>
+                    <div class="input-group-addon">
+                      <i id="icon_search" class="fa fa-search"></i>
+                      <i id="icon_load" class="fa fa-spinner fa-pulse fa-1x fa-fw"></i>
+                      <i id="icon_done" class="fa fa-check"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-sm-3" for="description">Description:</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" name="description" id="description" placeholder="Enter description">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-sm-3" for="Time">Time:</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" name="time" id="time" placeholder="Enter time">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-sm-3" for="year">Year:</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" name="year" id="year" placeholder="Enter year">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-sm-3" for="director">Director:</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" name="director" id="director" placeholder="Enter director">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-sm-3" for="cast">Cast:</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" name="cast" id="cast" placeholder="Enter cast">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-sm-3" for="rate">Rating:</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" name="rate" id="rate" placeholder="Enter rate">
+                </div>
+              </div>
+            </div><hr>
+            <div class="col-sm-12">
+              <div class="form-group">
+
+                <div class="col-sm-12 collapse" id="demo">
+                  <textarea class="form-control" name="content" id="add-content" value=""></textarea>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="file">Thumbnail:</label>
+                <div class="col-sm-10">
+                  <div class="input-group">
+                    <input type="text" class="form-control" name="thumbnail" id='thumbInput' value="">
+                    <div class="input-group-btn">
+                      <button id="gallery" type="button" class="btn btn-primary" data-toggle="modal" data-target="#galleryModal">
+                        <i class="fa fa-picture-o"></i>  Gallery</button>
+                      <button id="uploadDone" type="button" class="btn btn-warning" data-toggle="modal" data-target="#thumbnailModal">
+                        <i class="fa fa-picture-o"></i>  Upload</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <button onclick="goBack()" class="btn btn-default"><i class="fa fa-reply"></i> Go Back</button>
+                  <button name="add-new" type="submit" class="btn btn-danger"><i class="fa fa-plus"></i> Add New</button>
+                  <span class="post-author pull-right">Post by : <%= req.session.user.name %></span>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-              <button onclick="goBack()" class="btn btn-default"><i class="fa fa-reply"></i> Go Back</button>
-              <button name="add-new" type="submit" class="btn btn-danger"><i class="fa fa-plus"></i> Add New</button>
-              <span class="post-author pull-right">Post by : <%= req.session.user.name %></span>
-            </div>
+
           </div>
         </form>
       </div>
