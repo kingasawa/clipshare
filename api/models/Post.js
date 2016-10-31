@@ -24,10 +24,10 @@ module.exports = {
       type: 'string'
     },
     source: {
-      type: 'string'
+      type: 'longtext'
     },
     content: {
-      type: 'string'
+      type: 'longtext'
     },
     director: {
       type: 'array'

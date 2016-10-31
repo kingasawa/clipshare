@@ -9,9 +9,10 @@
       </div>
       <div class="modal-body">
         <form class="form-horizontal" id="add-post-form">
-          <div class="form-group"><div class="col-sm-6">
           <div class="form-group">
-            <label class="control-label col-sm-2" for="category">Category:</label>
+            <div class="col-sm-6">
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="category">Category</label>
             <div class="col-sm-10">
               <select class="form-control" name="cid" id="cid">
                 <% _.each(allCategory, function(category) { %>
@@ -21,30 +22,30 @@
             </div>
           </div>
           <div class="form-group">
-            <label class="control-label col-sm-2" for="name">Name:</label>
+            <label class="control-label col-sm-2" for="name">Name</label>
             <div class="col-sm-10">
               <input class="sr-only" name="uid" value="<%= req.session.user.id %>">
               <input type="text" class="form-control" name="name" id="name" placeholder="Enter name" required>
             </div>
           </div>
               <div class="form-group">
-                <label class="control-label col-sm-2" for="slug">Slug:</label>
+                <label class="control-label col-sm-2" for="slug">Slug</label>
                 <div class="col-sm-10">
                   <input type="text" class="form-control" name="slug" id="slug" placeholder="Auto generate slug" required>
                 </div>
               </div>
 
           <div class="form-group">
-            <label class="control-label col-sm-2" for="type">Type:</label>
+            <label class="control-label col-sm-2" for="type">Type</label>
             <div class="col-sm-10">
               <select class="form-control" name="type" id="type">
-                <option value="1">Youtube</option>
-                <option value="2">URL</option>
+                <option value="1">&#xf16a; Youtube</option>
+                <option value="2">&#xf0c1; URL</option>
               </select>
             </div>
           </div>
           <div class="form-group">
-            <label class="control-label col-sm-2" for="source">Source:</label>
+            <label class="control-label col-sm-2" for="source">Source</label>
             <div class="col-sm-10">
               <input type="text" class="form-control" name="source" id="source" placeholder="Enter source" required>
             </div>
@@ -53,7 +54,7 @@
 
 
           <div class="form-group">
-            <label class="control-label col-sm-2" for="featured">Featured:</label>
+            <label class="control-label col-sm-2" for="featured">Featured</label>
             <div class="col-sm-10">
               <select class="form-control" name="featured" id="feature">
                 <option value="0">No</option>
@@ -62,7 +63,7 @@
             </div>
           </div>
           <div class="form-group">
-            <label class="control-label col-sm-2" for="status">Status:</label>
+            <label class="control-label col-sm-2" for="status">Status</label>
             <div class="col-sm-10">
               <select class="form-control" name="status" id="status">
                 <option class="val1" value="1">Show</option>
@@ -71,7 +72,7 @@
             </div>
           </div>
               <div class="form-group">
-                <label class="control-label col-sm-2" for="content">Content:</label>
+                <label class="control-label col-sm-2" for="content">Content</label>
                 <div class="col-sm-10">
                   <button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#demo">Click here</button>
                 </div>
@@ -80,7 +81,7 @@
             </div>
             <div class="col-sm-6">
               <div class="form-group has-feedback">
-                <label class="control-label col-sm-3" name="imdb-title" for="imdb">IMDB Title:</label>
+                <label class="control-label col-sm-3" name="imdb-title" for="imdb">IMDB Title</label>
                 <div class="col-sm-9">
                   <div class="input-group">
                     <input type="text" class="form-control" name="imdb" id="imdb" placeholder="Enter IMDB Title" required>
@@ -93,42 +94,42 @@
                 </div>
               </div>
               <div class="form-group">
-                <label class="control-label col-sm-3" for="description">Description:</label>
+                <label class="control-label col-sm-3" for="description">Description</label>
                 <div class="col-sm-9">
                   <input type="text" class="form-control" name="description" id="description" placeholder="Enter description">
                 </div>
               </div>
               <div class="form-group">
-                <label class="control-label col-sm-3" for="Time">Time:</label>
+                <label class="control-label col-sm-3" for="Time">Time</label>
                 <div class="col-sm-9">
                   <input type="text" class="form-control" name="time" id="time" placeholder="Enter time">
                 </div>
               </div>
               <div class="form-group">
-                <label class="control-label col-sm-3" for="year">Year:</label>
+                <label class="control-label col-sm-3" for="year">Year</label>
                 <div class="col-sm-9">
                   <input type="text" class="form-control" name="year" id="year" placeholder="Enter year">
                 </div>
               </div>
               <div class="form-group">
-                <label class="control-label col-sm-3" for="director">Director:</label>
+                <label class="control-label col-sm-3" for="director">Director</label>
                 <div class="col-sm-9">
                   <input type="text" class="form-control" name="director" id="director" placeholder="Enter director">
                 </div>
               </div>
               <div class="form-group">
-                <label class="control-label col-sm-3" for="cast">Cast:</label>
+                <label class="control-label col-sm-3" for="cast">Actor</label>
                 <div class="col-sm-9">
                   <input type="text" class="form-control" name="cast" id="cast" placeholder="Enter cast">
                 </div>
               </div>
               <div class="form-group">
-                <label class="control-label col-sm-3" for="rate">Rating:</label>
+                <label class="control-label col-sm-3" for="rate">Rating</label>
                 <div class="col-sm-9">
                   <input type="text" class="form-control" name="rate" id="rate" placeholder="Enter rate">
                 </div>
               </div>
-            </div><hr>
+            </div>
             <div class="col-sm-12">
               <div class="form-group">
 
@@ -137,7 +138,7 @@
                 </div>
               </div>
               <div class="form-group">
-                <label class="control-label col-sm-1" for="file">Image:</label>
+                <label class="control-label col-sm-1" for="file">Image</label>
                 <div class="col-sm-11">
                   <div class="input-group">
                     <input type="text" class="form-control" name="thumbnail" id='thumbInput' value="">

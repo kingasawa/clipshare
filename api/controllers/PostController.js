@@ -29,7 +29,7 @@ module.exports = {
           Post.update({id:params.id},{view:updateView}).exec(function(err,done){
             //do something
           });
-          res.view('template/post',{result,allCategory,fivePost})
+          res.view('template/post',{result,allCategory,fivePost,title:result.name})
         })
       })
     })
@@ -81,7 +81,7 @@ module.exports = {
       } else {
         Category.find(function(err,allCategory) {
           Post.find({limit:5}).exec(function(err,fivePost) {
-            res.view('template/search', {searchPost,allCategory,fivePost})
+            res.view('template/search', {searchPost,allCategory,fivePost,title:'Clip Share - Tìm Phim'})
           })
         })
       }

@@ -3,9 +3,80 @@ body {
   background:#ececec !important;
   letter-spacing: 0.5px;
 }
- hr {
+footer {
+  margin-top:10px;
+  background-color: #222;
+  padding: 15px;
+  color:#fff;
+}
+a:hover {
+  text-decoration: none !important;
+}
+hr {
    margin:10px 0;
- }
+}
+/*------------------------- HOMEPAGE -----------------------------*/
+.more-info {
+  width: 100%;
+  float:left;
+  font-size:12px;
+  overflow: hidden;
+  color:#606060;
+}
+
+/*------------------------ INPUT FORM CSS -------------------------*/
+
+form#login {
+  background:#fff;
+  padding:20px;
+}
+.input-group-addon:last-child {
+  background:#f2f2f2;
+}
+.input[name=imdb] {
+  font-weight: bold;
+  font-size:16px;
+}
+input[name=uploadFiles] {
+  width:98%;
+}
+.form-control-feedback {
+  color:#de5448;
+}
+div#search-result-fail {
+  color:#de5448;
+}
+table input[type="checkbox"] {
+  position: relative !important;
+}
+select[name=type] {
+  font-family: 'FontAwesome', Helvetica;
+}
+/*---------------------- end css -----------------------------*/
+
+/*--------------------- MANAGE PAGE -------------------------*/
+#manage_post_length , #manage_category_length , #manage_post_info , #manage_category_info {
+  float:left;
+}
+#manage_post_filter, #manage_category_filter, #manage_post_paginate , #manage_category_paginate {
+  float:right;
+}
+#main-post, #list-post {
+  padding:0 5px;
+}
+#page-cat_manager, #page-post_manager,#page-user_manager {
+  background: #fff;
+  margin-bottom: 20px;
+}
+/*------------------- end manager page ----------------------*/
+
+
+/*------------------------- NAVBAR --------------------------*/
+.navbar {
+  margin-bottom: 15px;
+  border-radius: 0;
+}
+
 #navbar {
   text-transform:uppercase;
   font-weight:300;
@@ -25,31 +96,11 @@ body {
 #navbar ul li:hover > a{
   color: #de5448;
 }
+/*--------------------------- end navbar -------------------------------*/
+
+/*-------------------------- MAIN PAGE ---------------------------------*/
 .homepage  {
   background:#efefef;
-}
-.panel-heading {
-  color: #ffffff !important;
-  background-color: #de5448 !important;
-  font-weight: 300;
-  font-size: 16px;
-  letter-spacing: 1.2px !important;
-}
-.pagination > li > a, .pagination > li > span {
-  color:#de5448;
-}
-.pagination > .active > a {
-  background-color: #de5448;
-  border-color: #de5448;
-}
-#manage_post_length , #manage_category_length , #manage_post_info , #manage_category_info {
-  float:left;
-}
-#manage_post_filter, #manage_category_filter, #manage_post_paginate , #manage_category_paginate {
-  float:right;
-}
-#main-post, #list-post {
-  padding:0 5px;
 }
 .column-main {
   padding:0;
@@ -57,45 +108,28 @@ body {
 div#column-right {
   padding:0 5px;
 }
-a:hover {
-  text-decoration: none !important;
+.featured-name h5 {
+  color:#de5448;
 }
-table thead , .modal-header {
-  background:#a94442;
-  color:#fff;
+.featured-name p {
+  color:#646464;
+  font-weight:300;
 }
-#page-cat_manager, #page-post_manager,#page-user_manager {
-  background: #fff;
-  margin-bottom: 20px;
+#featured {
+  background:#fff;
+  padding:10px 0;
+  margin:-20px 0 20px 0;
 }
-.navbar {
-  margin-bottom: 15px;
-  border-radius: 0;
-}
-.sidenav {
-  padding-top: 20px;
-  background-color: #f1f1f1;
-}
-#homeCarousel,.carousel-inner , .column-right {
-
-  margin:-15px 0 20px 0;
+.featured-cat, .new-post {
+  padding:0 5px;
 }
 .thumbnail iframe {
   width:100%;
 }
-/* Add a gray background color and some padding to the footer */
-footer {
-  margin-top:10px;
-  background-color: #222;
-  padding: 15px;
-  color:#fff;
-}
-table input[type="checkbox"] {
-  position: relative !important;
-}
-.carousel-inner img {
-  width: 100%; /* Set width to 100% */
-}
+/*------------------------ end main page -------------------------------*/
+
+/*--------------------- POST DETAIL PAGE ------------------------------*/
+
 .name-post {
   white-space: nowrap;
   overflow: hidden;
@@ -105,27 +139,12 @@ table input[type="checkbox"] {
   font-size:14px;
   padding:10px 4px;
 }
-.featured-name h5 {
-  color:#de5448;
-}
-.featured-name p {
-  color:#646464;
-  font-weight:300;
-}
 .fb-comments {
   margin-bottom:20px;
   background: #fff;
 }
-img.thumb-post {
+img.thumb-post,img.img-cat-post {
   max-width:100%;
-}
-#featured {
-  background:#fff;
-  padding:10px 0;
-  margin:-20px 0 20px 0;
-}
-.featured-cat, .new-post {
-  padding:0 5px;
 }
 .new-post {
   margin-bottom: 15px;
@@ -162,43 +181,42 @@ span.desc-post {
   text-overflow: ellipsis;
   color:#606060;
 }
-/* Hide the carousel text when the screen is less than 600 pixels wide */
-@media (max-width: 600px) {
-  .carousel-caption {
-    display: none;
-  }
-  .container {
-    padding-right: 0 !important;
-    padding-left: 0 !important;
-  }
-  .name-post {
-    font-size:12px;
-  }
-  span.desc-post {
-    font-size:10px;
-  }
+/*-------------------------- end post detail --------------------------*/
+
+
+/*------------------------- COMMON BOOTSTRAP --------------------------*/
+table thead , .modal-header {
+  background:#a94442;
+  color:#fff;
 }
-@media (max-width: 1024px) {
-  .container {
-    padding-right: 5px !important;
-    padding-left: 5px !important;
-  }
+.sidenav {
+  padding-top: 20px;
+  background-color: #f1f1f1;
 }
-form#login {
-  background:#fff;
-  padding:20px;
+#homeCarousel,.carousel-inner , .column-right {
+  margin:-15px 0 20px 0;
 }
-input[name=uploadFiles] {
-  width:98%;
+.carousel-inner img {
+  width: 100%; /* Set width to 100% */
 }
-.form-control-feedback {
+.panel-heading {
+  color: #ffffff !important;
+  background-color: #de5448 !important;
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: 1.2px !important;
+}
+.pagination > li > a, .pagination > li > span {
   color:#de5448;
 }
-
-div#search-result-fail {
-  color:#de5448;
+.pagination > .active > a {
+  background-color: #de5448;
+  border-color: #de5448;
 }
-
+.fa-check:before {
+  color:#3f8040;
+}
+/*--------------------------- end bootstrap -----------------------------*/
 
 .hvr-underline-from-center {
   display: inline-block;
@@ -229,87 +247,72 @@ div#search-result-fail {
   left: 0;
   right: 0;
 }
-/*!*Hover effect*!*/
-/*.hovereffect {*/
-  /*float: left;*/
-  /*overflow: hidden;*/
-  /*position: relative;*/
-  /*text-align: center;*/
-  /*cursor: default;*/
-/*}*/
+/*----------------------------------------------------------------------*/
+@media (max-width: 500px) {
+  img.thumb-post {
+    max-height:150px;
+  }
+  .carousel-caption {
+    display: none;
+  }
+  .container {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+  .name-post {
+    font-size:12px;
+  }
+  span.desc-post {
+    font-size:10px;
+  }
+}
+@media (max-width: 1024px) {
+  img.thumb-post {
+    max-height:200px;
+  }
+  .container {
+    padding-right: 5px !important;
+    padding-left: 5px !important;
+  }
+}
+img.thumb-post {
+  max-height:260px;
+}
 
-/*.hovereffect .overlay {*/
-  /*width: 100%;*/
-  /*height: 100%;*/
-  /*position: absolute;*/
-  /*overflow: hidden;*/
-  /*top: 0;*/
-  /*left: 0;*/
-  /*padding: 50px 20px;*/
-/*}*/
+@media (max-width: 1334px) {
+  img.thumb-post {
+    max-height:200px;
+  }
+  img.img-cat-post {
 
-/*.hovereffect img {*/
-  /*display: block;*/
-  /*position: relative;*/
-  /*width: calc(100% + 20px);*/
-  /*-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;*/
-  /*transition: opacity 0.35s, transform 0.35s;*/
-  /*-webkit-backface-visibility: hidden;*/
-  /*backface-visibility: hidden;*/
-/*}*/
-
-/*.hovereffect:hover img {*/
-  /*opacity: 0.7;*/
-  /*filter: alpha(opacity=40);*/
-  /*-webkit-transform: translate3d(0,0,0);*/
-  /*transform: translate3d(0,0,0);*/
-/*}*/
-
-/*.hovereffect h2 {*/
-  /*text-transform: uppercase;*/
-  /*color: #de5448;*/
-  /*text-align: center;*/
-  /*position: relative;*/
-  /*font-size: 17px;*/
-  /*overflow: hidden;*/
-  /*padding: 0.5em 0;*/
-  /*background-color: transparent;*/
-/*}*/
-
-/*.hovereffect h2:after {*/
-  /*position: absolute;*/
-  /*bottom: 0;*/
-  /*left: 0;*/
-  /*width: 100%;*/
-  /*height: 2px;*/
-  /*background: #000;*/
-  /*content: '';*/
-  /*-webkit-transition: -webkit-transform 0.35s;*/
-  /*transition: transform 0.35s;*/
-  /*-webkit-transform: translate3d(-100%,0,0);*/
-  /*transform: translate3d(-100%,0,0);*/
-/*}*/
-
-/*.hovereffect:hover h2:after {*/
-  /*-webkit-transform: translate3d(0,0,0);*/
-  /*transform: translate3d(0,0,0);*/
-/*}*/
-
-/*.hovereffect a, .hovereffect p {*/
-  /*padding:10px 0;*/
-  /*background: rgb(255, 255, 255);*/
-  /*color: #de5448;*/
-  /*opacity: 0;*/
-  /*filter: alpha(opacity=0);*/
-  /*-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;*/
-  /*transition: opacity 0.35s, transform 0.35s;*/
-  /*-webkit-transform: translate3d(100%,0,0);*/
-  /*transform: translate3d(100%,0,0);*/
-/*}*/
-
-/*.hovereffect:hover a, .hovereffect:hover p {*/
-  /*opacity: 1;*/
-  /*filter: alpha(opacity=100);*/
-  /*-webkit-transform: translate3d(0,0,0);*/
-  /*transform: translate3d(0,0,0);*/
-/*}*/
+  }
+}
+@media (max-width: 525px) { /* iPhone 6 Plus - ngang */
+  img.thumb-post {
+    max-height:200px;
+  }
+}
+@media (max-width: 450px) { /* iPhone 6 Plus - đứng */
+  img.thumb-post {
+    max-height:120px !important;
+  }
+  img.img-cat-post {
+    max-height:20px;
+  }
+}
+@media (max-width: 670px) { /* iPhone 6 Plus - ngang */
+  img.thumb-post {
+    max-height:150px;
+  }
+  img.img-cat-post {
+    max-height:120px;
+  }
+}
+@media (max-width: 900px) { /* iPhone 6 Plus - ngang */
+  img.thumb-post {
+    max-height:180px;
+  }
+  img.img-cat-post {
+    max-height:240px;
+  }
+}

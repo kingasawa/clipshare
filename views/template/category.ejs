@@ -8,7 +8,7 @@
         <% _.each(foundCategory.posts, function(post) { %>
         <a href="/post/view?id=<%= post.id %>">
           <div class="col-md-3 col-xs-3 col-sm-3 new-post">
-            <img class="thumb-post" src="<%= post.thumbnail %>">
+            <img width="300" height="444" class="thumb-post" src="<%= post.thumbnail %>">
             <!--Thumbnail 270x400-->
             <div class="name-post">
               <%= post.name %>

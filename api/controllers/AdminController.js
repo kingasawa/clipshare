@@ -4,7 +4,8 @@
  * @description :: Server-side logic for managing admins
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
-
+var fs = require('fs'),
+    request = require('request');
 module.exports = {
   index: (req,res) => {
     let data = {
@@ -129,7 +130,20 @@ module.exports = {
       return res.badRequest('sai zồi')
     }
     let params = req.allParams();
-    console.log('new post',params);
+
+
+
+
+    // var gm = require('gm');
+    //
+    // gm('https://'+params.thumbnail)
+    //   .resize(300, 420)
+    //   .autoOrient()
+    //   .write('../../assets/images/thumbnail/', function (err,newimg) {
+    //     if (err) console.log(err);
+    //     console.log(newimg)
+    //   });
+
     Post.create(params).exec(function(err,result) {
       if (err) {
         return res.negotiate(err)

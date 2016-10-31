@@ -23,7 +23,7 @@ module.exports = {
           if (err) {
             return res.negotiate(err)
           }
-          res.view('template/category', {foundCategory, fivePost, allCategory})
+          res.view('template/category', {foundCategory, fivePost, allCategory,title:foundCategory.name})
         })
       })
     })

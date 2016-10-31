@@ -1,16 +1,3 @@
-<!--<div id="featured" class="container-fluid">-->
-<!--<% _.each(featuredPost, function(featured) { %>-->
-<!--<a href="/post/view?id=<%= featured.id %>">-->
-<!--<div class="col-md-2 col-xs-3 col-sm-3 featured-cat">-->
-<!--<img class="thumb-post" src="<%= featured.thumbnail %>">-->
-<!--&lt;!&ndash;Thumbnail 270x400&ndash;&gt;-->
-<!--<div class="name-post">-->
-<!--<%= featured.name %>-->
-<!--</div>-->
-<!--</div>-->
-<!--</a>-->
-<!--<% }) %>-->
-<!--</div>-->
 
 <div class="container">
   <div id="list-post" class="col-sm-8">
@@ -20,12 +7,16 @@
         <% _.each(allPost, function(post) { %>
         <a href="/post/view?id=<%= post.id %>&name=<%= post.name %>">
           <div class="col-md-3 col-xs-3 col-sm-3 new-post">
-            <img class="thumb-post" src="<%= post.thumbnail %>">
+            <div class="thumb-div">
+            <img width="300" height="444" class="thumb-post" src="<%= post.thumbnail %>">
+            </div>
             <!--Thumbnail 300x444-->
             <div class="name-post">
               <%= post.name %>
               <span class="desc-post"><%= post.description %></span>
+              <span class="more-info"><i class="fa fa-clock-o"></i><%= post.time %>m  <i class="fa fa-star"></i><%= post.rate %></span>
             </div>
+
           </div>
         </a>
         <% }) %>
@@ -76,4 +67,3 @@
     </div>
   </div>
 </div>
-
