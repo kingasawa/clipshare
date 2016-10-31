@@ -74,7 +74,7 @@ module.exports = {
   search: (req,res) => {
     let params = req.allParams();
     Post.find({
-      name:{'contains':params.keyword}
+      slug:{'contains':params.keyword}
     }).exec(function(err,searchPost) {
       if (!searchPost) {
         res.negotiate('Không tìm thấy phim')

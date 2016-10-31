@@ -26,7 +26,8 @@ hr {
 
 /*------------------------ INPUT FORM CSS -------------------------*/
 
-form#login {
+#login-page, #register-page {
+  max-width:500px;
   background:#fff;
   padding:20px;
 }
@@ -77,23 +78,27 @@ select[name=type] {
   border-radius: 0;
 }
 
-#navbar {
+#navbar-cat{
+  background: #2f2f2f;
   text-transform:uppercase;
   font-weight:300;
-  padding:15px 0;
 }
-#navbar ul li {
-   border-bottom:3px solid #f8f8f8;
+#navbar-logo {
+  padding:10px 0;
+  margin-bottom:0;
 }
-#navbar .navbar-nav > .active > a {
-  background-color: #f8f8f8 !important;
+#navbar-cat ul li {
+   border-bottom:3px solid #2f2f2f;
+}
+#navbar-cat .navbar-nav > .active > a {
+  background-color: #2f2f2f !important;
   border-bottom:4px solid #de5448;
   color:#de5448;
   font-weight: 500;
   padding:13px;
 }
 
-#navbar ul li:hover > a{
+#navbar-cat ul li:hover > a{
   color: #de5448;
 }
 /*--------------------------- end navbar -------------------------------*/

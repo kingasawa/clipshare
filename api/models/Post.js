@@ -11,6 +11,9 @@ module.exports = {
     name: {
       type: 'string'
     },
+    slug: {
+      type: 'string'
+    },
     description: {
       type: 'string'
     },

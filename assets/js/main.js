@@ -245,14 +245,6 @@ $(function() {
     }
   });
 
-  $('#search-form').submit(function(a) {
-    a.preventDefault();
-    var keySearch = $('#search-key').serialize();
-    console.log(keySearch);
-    socket.get('/post/search?' + keySearch);
-    window.location.href = '/post/search?'+keySearch
-  });
-
   socket.on('search/imdb',function(recieve) {
     $('#icon_search').hide();
     $('#icon_done').show();
@@ -313,9 +305,7 @@ $('#post-content .panel-body').each(function(){
 });
 
 $('#name').keyup(function () {
-
-
-    //Lấy text từ thẻ input title
+  //Lấy text từ thẻ input title
     var movieName = $('input[name=name]').val();
     //Đổi chữ hoa thành chữ thường
     var slug = movieName.toLowerCase();
@@ -344,5 +334,42 @@ $('#name').keyup(function () {
     slug = slug.replace(/\@\-|\-\@|\@/gi, '');
     //In slug ra textbox có id “slug”
     $('input[name=slug]').val(slug);
+});
 
-})
+$('#search-key').keyup(function () {
+  //Lấy text từ thẻ input title
+  var inputKey = $('#search-key').val();
+  //Đổi chữ hoa thành chữ thường
+  var inputkey = inputKey.toLowerCase();
+  //Đổi ký tự có dấu thành không dấu
+  inputkey = inputkey.replace(/á|à|ả|ạ|ã|ă|ắ|ằ|ẳ|ẵ|ặ|â|ấ|ầ|ẩ|ẫ|ậ/gi, 'a');
+  inputkey = inputkey.replace(/é|è|ẻ|ẽ|ẹ|ê|ế|ề|ể|ễ|ệ/gi, 'e');
+  inputkey = inputkey.replace(/i|í|ì|ỉ|ĩ|ị/gi, 'i');
+  inputkey = inputkey.replace(/ó|ò|ỏ|õ|ọ|ô|ố|ồ|ổ|ỗ|ộ|ơ|ớ|ờ|ở|ỡ|ợ/gi, 'o');
+  inputkey = inputkey.replace(/ú|ù|ủ|ũ|ụ|ư|ứ|ừ|ử|ữ|ự/gi, 'u');
+  inputkey = inputkey.replace(/ý|ỳ|ỷ|ỹ|ỵ/gi, 'y');
+  inputkey = inputkey.replace(/đ/gi, 'd');
+  //Xóa các ký tự đặt biệt
+  inputkey =
+    inputkey.replace(/\`|\~|\!|\@|\#|\||\$|\%|\^|\&|\*|\(|\)|\+|\=|\,|\.|\/|\?|\>|\<|\'|\"|\:|\;|_/gi,
+      '');
+  //Đổi khoảng trắng thành ký tự gạch ngang
+  inputkey = inputkey.replace(/ /gi, "-");
+  //Đổi nhiều ký tự gạch ngang liên tiếp thành 1 ký tự gạch ngang
+  //Phòng trường hợp người nhập vào quá nhiều ký tự trắng
+  inputkey = inputkey.replace(/\-\-\-\-\-/gi, '-');
+  inputkey = inputkey.replace(/\-\-\-\-/gi, '-');
+  inputkey = inputkey.replace(/\-\-\-/gi, '-');
+  inputkey = inputkey.replace(/\-\-/gi, '-');
+  //Xóa các ký tự gạch ngang ở đầu và cuối
+  inputkey = '@' + inputkey + '@';
+  inputkey = inputkey.replace(/\@\-|\-\@|\@/gi, '');
+  //In slug ra textbox có id “slug”
+  $('input[name=keyword]').val(inputkey);
+});
+
+$('#search-form').submit(function(a) {
+  a.preventDefault();
+  var keyword = $('input[name=keyword]').val();
+  window.location.href = '/post/search?keyword='+keyword
+});

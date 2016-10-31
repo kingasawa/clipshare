@@ -34,6 +34,17 @@
     <div class="panel panel-default">
 
       <div class="panel-heading"><i class="fa fa-film"></i> 5 LATEST MOVIES</div>
+      <div id="search" class="panel-body">
+        <form id="search-form" action="post">
+          <div class="input-group">
+            <input type="text" class="form-control" name="putkeyword" id='search-key' value="">
+            <input type="text" class="sr-only" name="keyword" value="">
+            <div class="input-group-btn">
+              <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i>  Search</button>
+            </div>
+          </div>
+        </form>
+      </div><hr>
       <div class="panel-body">
         <% _.each(fivePost, function(latestpost) { %>
         <a href="/post/view?id=<%= latestpost.id %>">
