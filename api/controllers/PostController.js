@@ -20,7 +20,7 @@ module.exports = {
   view: (req,res) => {
     let params = req.allParams();
     Category.find(function(err,allCategory) {
-      Post.find({limit:5}).exec(function(err,fivePost) {
+      Post.find({limit:5,sort: 'createdAt DESC'}).exec(function(err,fivePost) {
         Post.findOne({id: params.id}).exec(function (err,result) {
           if (err) {
             return res.negotiate(err)
@@ -74,7 +74,7 @@ module.exports = {
   search: (req,res) => {
     let params = req.allParams();
     Post.find({
-      slug:{'contains':params.keyword}
+      slug:{'contains':params.keyword},sort:'createdAt DESC'
     }).exec(function(err,searchPost) {
       if (!searchPost) {
         res.negotiate('Không tìm thấy phim')

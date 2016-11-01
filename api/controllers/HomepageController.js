@@ -21,7 +21,7 @@ module.exports = {
     });
     // Select all Featured Post - no limit
     let findFeaturedPost = new Promise((resolve, reject) => {
-      Post.find({featured:1}).exec((err, featuredPost) => {
+      Post.find({featured:1,sort:'createdAt DESC'}).exec((err, featuredPost) => {
         if (err) {reject(err)}
         resolve(featuredPost);
       })
@@ -36,14 +36,14 @@ module.exports = {
     // Select all Post - limit 32
     let findAllPost = new Promise((resolve, reject) => {
       if (!params.page) {
-        Post.find().limit(postLimit).exec((err, allPost) => {
+        Post.find({sort:'createdAt DESC'}).limit(postLimit).exec((err, allPost) => {
           if (err) {
             reject(err)
           }
           resolve(allPost);
         })
       } else {
-        Post.find().paginate({params,limit:postLimit}).exec((err, allPost) => {
+        Post.find({sort:'createdAt DESC'}).paginate({params,limit:postLimit}).exec((err, allPost) => {
           if (err) {
             reject(err)
           }

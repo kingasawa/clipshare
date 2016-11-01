@@ -39,8 +39,11 @@
           <p><a class="btn btn-default btn-sm" href="#"><i class="fa fa-users"></i> Actor</a> <%= result.cast %></p>
         </div>
         <div class="panel-footer">
-          <p><button class="btn btn-default" data-toggle="collapse" data-target="#demo">View Comment</button></p>
+          <p><button class="btn btn-default" data-toggle="collapse" data-target="#fb-comment-content">View Comment</button></p>
           <div id="fb-root"></div>
+          <div id="fb-comment-content" class="collapse">
+            <div id="fb-comments" class="fb-comments" data-href="http://vnmagic.net" data-width="100%" data-numposts="5"></div>
+          </div>
           <script>(function(d, s, id) {
               var js, fjs = d.getElementsByTagName(s)[0];
               if (d.getElementById(id)) return;
@@ -51,46 +54,11 @@
         </div>
       </div>
 
-      <div id="demo" class="collapse">
-        <div id="fb-comments" class="fb-comments col-sm-12" data-href="http://vnmagic.net" data-width="100%" data-numposts="5"></div>
-      </div>
+
 
     </div>
 
-      <div id="column-right" class="col-sm-4">
-        <div class="panel panel-default">
-          <div id="search" class="panel-body">
-            <form id="search-form" action="post">
-              <div class="input-group">
-                <input type="text" class="form-control" name="putkeyword" id='search-key' value="">
-                <input type="text" class="sr-only" name="keyword" value="">
-                <div class="input-group-btn">
-                  <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i>  Search</button>
-                </div>
-              </div>
-            </form>
-          </div>
-          <div class="panel-heading"><i class="fa fa-film"></i> 5 LATEST MOVIES</div>
-          <div class="panel-body">
-            <% _.each(fivePost, function(latestpost) { %>
-            <a href="/post/view?id=<%= latestpost.id %>">
-              <div class="media featured-name">
-                <div class="media-left">
-                  <img src="<%= latestpost.thumbnail %>" class="media-object" style="width:80px">
-                </div>
-                <div class="media-body">
-                  <h5 class="media-heading"><%= latestpost.name %></h5>
-                  <p><%= latestpost.description %></p>
-                  <p><i class="fa fa-clock-o"></i> <%= latestpost.time %></p>
-                  <p><i class="fa fa-calendar"></i> <%= latestpost.year %></p>
-                  <p><i class="fa fa-eye"></i> <%= latestpost.view %> views</p>
-                </div>
-              </div></a><hr>
-            <% }) %>
-          </div>
-
-        </div>
-      </div>
+    <%- partial ('common/column-right.ejs') %>
 
   </div>
 

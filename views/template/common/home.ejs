@@ -50,7 +50,7 @@
       <div class="panel-heading"><i class="fa fa-film"></i> FEATURED MOVIES</div>
       <div class="panel-body">
         <% _.each(featuredPost, function(featured) { %>
-        <a href="/post/view?id=<%= featured.id %>">
+        <a href="/post/view?id=<%= featured.id %>&slug=<%= featured.slug %>">
           <div class="media featured-name">
             <div class="media-left">
               <img src="<%= featured.thumbnail %>" class="media-object" style="width:80px">

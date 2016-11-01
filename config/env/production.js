@@ -19,7 +19,7 @@ module.exports = {
 
   models: {
     // connection: 'someMysqlServer'
-    connection: 'someMysqlServer',
+    connection: 'someMysqlServer1',
     migrate: 'safe'
   }
 

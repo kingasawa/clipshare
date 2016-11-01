@@ -144,9 +144,10 @@ div#column-right {
   font-size:14px;
   padding:10px 4px;
 }
-.fb-comments {
+.fb-comments,#fb-comment-content {
   margin-bottom:20px;
   background: #fff;
+  padding:0 10px;
 }
 img.thumb-post,img.img-cat-post {
   max-width:100%;
@@ -154,7 +155,7 @@ img.thumb-post,img.img-cat-post {
 .new-post {
   margin-bottom: 15px;
 }
-.post-info , .fb-comments {
+.post-info  {
   margin:10px 0;
   background: #fff;
   padding:10px;

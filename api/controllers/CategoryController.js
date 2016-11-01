@@ -18,7 +18,7 @@ module.exports = {
   view: (req,res) => {
     let params = req.allParams();
     Category.find(function(err,allCategory) {
-      Post.find({limit: 5}).exec(function (err, fivePost) {
+      Post.find({limit: 5,sort: 'createdAt DESC'}).exec(function (err, fivePost) {
         Category.findOne({id: params.id}).populate('posts').exec(function (err, foundCategory) {
           if (err) {
             return res.negotiate(err)

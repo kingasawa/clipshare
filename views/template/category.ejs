@@ -6,7 +6,7 @@
       <div class="panel-heading"><i class="fa fa-film"></i> <%= foundCategory.name %></div>
       <div class="panel-body">
         <% _.each(foundCategory.posts, function(post) { %>
-        <a href="/post/view?id=<%= post.id %>">
+        <a href="/post/view?id=<%= post.id %>&slug=<%= post.slug %>">
           <div class="col-md-3 col-xs-3 col-sm-3 new-post">
             <img width="300" height="444" class="thumb-post" src="<%= post.thumbnail %>">
             <!--Thumbnail 270x400-->
@@ -30,42 +30,7 @@
     </div>
   </div>
 
-  <div id="column-right" class="col-sm-4">
-    <div class="panel panel-default">
-      <div class="panel-heading"><i class="fa fa-search"></i> SEARCH MOVIES</div>
-      <div id="search" class="panel-body">
-        <form id="search-form" action="post">
-          <div class="input-group">
-            <input type="text" class="form-control" name="putkeyword" id='search-key' value="">
-            <input type="text" class="sr-only" name="keyword" value="">
-            <div class="input-group-btn">
-              <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i>  Search</button>
-            </div>
-          </div>
-        </form>
-
-      </div>
-      <div class="panel-heading"><i class="fa fa-film"></i> 5 LATEST MOVIES</div>
-
-      <div class="panel-body">
-        <% _.each(fivePost, function(latestpost) { %>
-        <a href="/post/view?id=<%= latestpost.id %>">
-          <div class="media featured-name">
-            <div class="media-left">
-              <img src="<%= latestpost.thumbnail %>" class="media-object" style="width:80px">
-            </div>
-            <div class="media-body">
-              <h5 class="media-heading"><%= latestpost.name %></h5>
-              <p><%= latestpost.description %></p>
-              <p><i class="fa fa-clock-o"></i> <%= latestpost.time %></p>
-              <p><i class="fa fa-calendar"></i> <%= latestpost.year %></p>
-              <p><i class="fa fa-eye"></i> <%= latestpost.view %> views</p>
-            </div>
-          </div></a><hr>
-        <% }) %>
-      </div>
-    </div>
-  </div>
+  <%- partial ('common/column-right.ejs') %>
 
 </div>
 </div>
