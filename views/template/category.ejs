@@ -20,7 +20,7 @@
       </div>
       <div class="panel-footer text-center">
         <ul class="pagination">
-          <li><a href="/category/view?id=<%= foundCategory.id %>&page=1&name=<%= foundCategory.name %>">1</a></li>
+          <li><a href="/category/view?id=<%= foundCategory.id %>&page=1">1</a></li>
           <li class="active"><a href="#">2</a></li>
           <li><a href="#">3</a></li>
           <li><a href="#">4</a></li>
@@ -32,8 +32,7 @@
 
   <div id="column-right" class="col-sm-4">
     <div class="panel panel-default">
-
-      <div class="panel-heading"><i class="fa fa-film"></i> 5 LATEST MOVIES</div>
+      <div class="panel-heading"><i class="fa fa-search"></i> SEARCH MOVIES</div>
       <div id="search" class="panel-body">
         <form id="search-form" action="post">
           <div class="input-group">
@@ -44,7 +43,10 @@
             </div>
           </div>
         </form>
-      </div><hr>
+
+      </div>
+      <div class="panel-heading"><i class="fa fa-film"></i> 5 LATEST MOVIES</div>
+
       <div class="panel-body">
         <% _.each(fivePost, function(latestpost) { %>
         <a href="/post/view?id=<%= latestpost.id %>">

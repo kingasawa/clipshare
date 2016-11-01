@@ -56,20 +56,11 @@ module.exports.connections = {
   ***************************************************************************/
   someMysqlServer: {
     adapter: 'sails-mysql',
-    host: 'vnmagic.net',
+    host: 'taovang.vn',
     port: 3306,
-    user: 'khanh', //optional
+    user: 'ho444cf_khanh', //optional
     password: 'Diablo321', //optional
-    database: 'clipshare' //optional
-  },
-
-  onlineMysqlServer: {
-    adapter: 'sails-mysql',
-    host: 'sannhuabaclieu.com',
-    port: 3306,
-    user: 'sanc14d1_root', //optional
-    password: 'Diablo321', //optional
-    database: 'sanc14d1_data' //optional
+    database: 'ho444cf_clip' //optional
   }
 
   /***************************************************************************
