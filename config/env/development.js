@@ -21,5 +21,6 @@ module.exports = {
     // connection: 'someMysqlServer'
     connection: 'someMysqlServer1',
     migrate: 'safe'
-  }
+  },
+  port:80
 };

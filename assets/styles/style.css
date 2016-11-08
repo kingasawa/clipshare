@@ -187,6 +187,10 @@ span.desc-post {
   text-overflow: ellipsis;
   color:#606060;
 }
+
+div#post-content img {
+  max-width:100%;
+}
 /*-------------------------- end post detail --------------------------*/
 
 
