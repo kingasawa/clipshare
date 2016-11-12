@@ -5,8 +5,10 @@
       <div class="embed-responsive embed-responsive-16by9">
         <% if (result.type==1) { %>
         <iframe class="embed-responsive-item" src="//www.youtube.com/embed/<%= result.source %>"></iframe>
-        <% } else { %>
+        <% } else if (result.type==2){ %>
         <video controls><source src="<%= result.source %>" type="video/mp4"></video>
+        <% } else { %>
+        <iframe class="embed-responsive-item" src="https://drive.google.com/file/d/<%= result.source %>/preview"></iframe>
         <% } %>
       </div>
       <div class="row post-info">
