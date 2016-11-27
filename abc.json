@@ -1,0 +1,459 @@
+{
+  "data": {
+    "file": [
+      {
+        "name": "1",
+        "link": "2",
+        "size": 3,
+        "createdAt": "2016-10-24T21:21:45.022Z",
+        "updatedAt": "2016-10-24T21:21:45.022Z",
+        "id": 1
+      }
+    ],
+    "category": [
+      {
+        "name": "Phim Hành Động",
+        "description": "phim hành động",
+        "colum": "1",
+        "status": 1,
+        "createdAt": "2016-10-21T02:56:45.013Z",
+        "updatedAt": "2016-10-23T15:33:15.069Z",
+        "id": 1,
+        "column": 1
+      },
+      {
+        "name": "Phim Viễn Tưởng",
+        "description": "phim viễn tưởng",
+        "colum": "1",
+        "status": 1,
+        "createdAt": "2016-10-21T02:57:01.551Z",
+        "updatedAt": "2016-10-23T15:33:42.605Z",
+        "id": 2,
+        "column": 1
+      },
+      {
+        "name": "Phim Chiếu Rạp",
+        "description": "phim chiếu rạp",
+        "column": 1,
+        "status": 1,
+        "createdAt": "2016-10-22T21:44:34.524Z",
+        "updatedAt": "2016-10-23T15:34:21.221Z",
+        "id": 8
+      },
+      {
+        "name": "Phim Kinh Dị",
+        "description": "phim kinh dị",
+        "column": 1,
+        "status": 1,
+        "createdAt": "2016-10-23T15:34:44.510Z",
+        "updatedAt": "2016-10-23T15:34:44.510Z",
+        "id": 9
+      },
+      {
+        "name": "Phim Hoạt Hình",
+        "description": "phim hoạt hình",
+        "column": 1,
+        "status": 1,
+        "createdAt": "2016-10-24T22:47:32.676Z",
+        "updatedAt": "2016-10-24T22:47:32.676Z",
+        "id": 10
+      }
+    ],
+    "files": [
+      {
+        "link": "/images/thumbnail/83314668-ebdc-494a-b105-46f436f522c5.PNG",
+        "name": "IMG_0085.PNG",
+        "size": 1032346,
+        "createdAt": "2016-10-24T22:10:09.345Z",
+        "updatedAt": "2016-10-24T22:10:09.345Z",
+        "id": 1
+      },
+      {
+        "link": "/images/thumbnail/c5aec715-3845-4408-aa29-f0e26ce4bc83.PNG",
+        "name": "IMG_0100.PNG",
+        "size": 1787660,
+        "createdAt": "2016-10-24T22:35:38.127Z",
+        "updatedAt": "2016-10-24T22:35:38.127Z",
+        "id": 2
+      },
+      {
+        "link": "/images/thumbnail/67df51b5-f91f-4df2-b0b6-2876fd53152a.jpg",
+        "name": "hotel-transylvania-2012-201508759.jpg",
+        "size": 95227,
+        "createdAt": "2016-10-24T22:49:14.540Z",
+        "updatedAt": "2016-10-24T22:49:14.540Z",
+        "id": 3
+      },
+      {
+        "link": "/images/thumbnail/5be22e18-5fad-40cf-887c-b3ec30bfd552.jpg",
+        "name": "STORKS__1_SHEET__VNESE.jpg",
+        "size": 191466,
+        "createdAt": "2016-10-25T03:01:26.646Z",
+        "updatedAt": "2016-10-25T03:01:26.646Z",
+        "id": 4
+      },
+      {
+        "link": "/images/thumbnail/1067a6e5-5dc4-44e6-b69f-35856f5fabd5.jpg",
+        "name": "harry-potter-and-the-half-blood-prince-harry-potter-va-hoang-tu-lai-v.jpg",
+        "size": 251481,
+        "createdAt": "2016-10-26T23:55:04.229Z",
+        "updatedAt": "2016-10-26T23:55:04.229Z",
+        "id": 5
+      },
+      {
+        "link": "/images/thumbnail/d2001dc6-57c0-4e97-8281-6db619b4fbd3.jpg",
+        "name": "Edge_of_Tomorrow_Poster.jpg",
+        "size": 63841,
+        "createdAt": "2016-10-27T02:24:56.951Z",
+        "updatedAt": "2016-10-27T02:24:56.951Z",
+        "id": 6
+      },
+      {
+        "link": "/images/thumbnail/5bcf4785-5c58-469d-95df-c038ab198132.jpeg",
+        "name": "SxAQMEykp8B52kZdh.jpeg",
+        "size": 44345,
+        "createdAt": "2016-10-27T17:07:29.232Z",
+        "updatedAt": "2016-10-27T17:07:29.232Z",
+        "id": 7
+      },
+      {
+        "link": "/images/thumbnail/e5bd5490-2f55-468a-bcfe-23a748844ae5.jpg",
+        "name": "Edge_of_Tomorrow_Poster.jpg",
+        "size": 63841,
+        "createdAt": "2016-10-27T18:58:32.178Z",
+        "updatedAt": "2016-10-27T18:58:32.178Z",
+        "id": 8
+      }
+    ],
+    "post": [
+      {
+        "cid": 10,
+        "uid": 26,
+        "name": "Khách sạn huyền bí",
+        "description": "Full HD vietsub",
+        "type": "1",
+        "source": "Jr7FSMvmwBY",
+        "content": "<p><strong>Nội dung</strong> : chưa có nội dung cho phim này</p>\r\n",
+        "featured": 0,
+        "status": "1",
+        "thumbnail": "/images/thumbnail/67df51b5-f91f-4df2-b0b6-2876fd53152a.jpg",
+        "createdAt": "2016-10-24T22:49:17.830Z",
+        "updatedAt": "2016-10-27T18:15:43.988Z",
+        "id": 28,
+        "time": 91,
+        "year": 2012
+      },
+      {
+        "cid": 10,
+        "uid": 26,
+        "name": "Tiểu Đội Cò Bay",
+        "description": "tiểu đội cò bay",
+        "type": "1",
+        "source": "_IdhVAsYirU",
+        "content": "<p>giới thiệu , chưa c&oacute; nh&eacute;</p>\r\n",
+        "featured": 1,
+        "time": 90,
+        "year": 2017,
+        "cast": [
+          "khánh,cát,trần"
+        ],
+        "status": "1",
+        "thumbnail": "/images/thumbnail/5be22e18-5fad-40cf-887c-b3ec30bfd552.jpg",
+        "createdAt": "2016-10-25T03:01:29.339Z",
+        "updatedAt": "2016-10-25T03:01:29.339Z",
+        "id": 30
+      },
+      {
+        "cid": 2,
+        "uid": 26,
+        "name": "Harry Potter & Hoàng Tử Lai",
+        "description": "hoàng tử lai",
+        "type": "1",
+        "source": "X2pDvt30J5U",
+        "content": "<p>chưa c</p>\r\n",
+        "time": 90,
+        "year": 2017,
+        "cast": [
+          "khánh,cát,trần"
+        ],
+        "featured": 0,
+        "status": "1",
+        "thumbnail": "/images/thumbnail/1067a6e5-5dc4-44e6-b69f-35856f5fabd5.jpg",
+        "createdAt": "2016-10-26T23:55:11.179Z",
+        "updatedAt": "2016-10-27T00:00:47.279Z",
+        "id": 33
+      },
+      {
+        "cid": 2,
+        "uid": 26,
+        "name": "Cuộc Chiến Luân Hồi",
+        "description": "Edge of Tomorrow",
+        "type": "1",
+        "source": "syDf6IPCxM4",
+        "content": "",
+        "time": 90,
+        "year": 2017,
+        "cast": [
+          "khánh,cát,trần"
+        ],
+        "featured": 0,
+        "status": "1",
+        "thumbnail": "/images/thumbnail/d2001dc6-57c0-4e97-8281-6db619b4fbd3.jpg",
+        "createdAt": "2016-10-27T02:24:58.464Z",
+        "updatedAt": "2016-10-27T02:24:58.464Z",
+        "id": 34
+      },
+      {
+        "cid": 1,
+        "uid": 26,
+        "name": "300 Chiến Binh",
+        "description": "300",
+        "type": "2",
+        "source": "https://redirector.googlevideo.com/videoplayback?requiressl=yes&id=36632bc213357201&itag=37&source=webdrive&ttl=transient&app=explorer&ip=125.212.241.142&ipbits=0&expire=1477550533&sparams=requiressl%2Cid%2Citag%2Csource%2Cttl%2Cip%2Cipbits%2Cexpire&signature=909F0FD15A419D38D944196BC5AC9BC3CDEBFC98.3D59BFA708B531E1696F7BA6F23C2738C2FEA7A2&key=ck2&mm=31&mn=sn-i3b7kne7&ms=au&mt=1477535991&mv=u&nh=IgpwcjA1LmhrZzAxKgkxMjcuMC4wLjE&pl=20",
+        "content": "<p><strong>300</strong> l&agrave; bộ phim lịch sử t&aacute;i hiện cuộc chiến <strong>Thermopylae</strong> nổi tiếng k&eacute;o d&agrave;i 3 ng&agrave;y trong lịch sử Hy Lạp khi Vua Leonidas c&ugrave;ng 300 tinh binh Sparta đ&atilde; quyết tử đ&aacute;nh trả đạo qu&acirc;n Ba Tư khổng lồ gần 1 triệu qu&acirc;n do Vua Xerxes chỉ huy nhằm th&ocirc;n t&iacute;nh đất nước Hy Lạp.</p>\r\n",
+        "time": 90,
+        "year": 2017,
+        "cast": [
+          "khánh,cát,trần"
+        ],
+        "featured": 0,
+        "status": "1",
+        "thumbnail": "/images/thumbnail/5bcf4785-5c58-469d-95df-c038ab198132.jpeg",
+        "createdAt": "2016-10-27T17:07:31.206Z",
+        "updatedAt": "2016-10-27T17:07:31.206Z",
+        "id": 35
+      },
+      {
+        "cid": 1,
+        "uid": 26,
+        "name": "sadsad",
+        "description": "dsada",
+        "type": "1",
+        "source": "dsadada",
+        "content": "",
+        "time": 90,
+        "year": 2017,
+        "cast": [
+          "khánh,cát,trần"
+        ],
+        "featured": 0,
+        "status": "1",
+        "thumbnail": "/images/thumbnail/e5bd5490-2f55-468a-bcfe-23a748844ae5.jpg",
+        "createdAt": "2016-10-27T18:58:35.834Z",
+        "updatedAt": "2016-10-27T18:58:35.834Z",
+        "id": 37
+      }
+    ],
+    "user": [
+      {
+        "email": "kingasawa@gmail.com",
+        "password": "41b77ee00cfeed693504005e1881c2f0",
+        "name": "Khánh Trần",
+        "birthday": "28/04/1983",
+        "group": "Admin",
+        "avatar": "no-avatar.png",
+        "point": 10,
+        "about": "viết nội dung giới thiệu về bản thân của bạn",
+        "createdAt": "2016-10-03T06:16:12.002Z",
+        "updatedAt": "2016-10-03T06:16:12.002Z",
+        "id": 26
+      }
+    ]
+  },
+  "schema": {
+    "file": {
+      "name": {
+        "type": "string"
+      },
+      "link": {
+        "type": "string"
+      },
+      "size": {
+        "type": "integer"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "category": {
+      "name": {
+        "type": "string"
+      },
+      "description": {
+        "type": "longtext"
+      },
+      "column": {
+        "type": "integer"
+      },
+      "status": {
+        "type": "integer"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "files": {
+      "name": {
+        "type": "string"
+      },
+      "link": {
+        "type": "string"
+      },
+      "size": {
+        "type": "integer"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "post": {
+      "name": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "type": {
+        "type": "string"
+      },
+      "thumbnail": {
+        "type": "string"
+      },
+      "source": {
+        "type": "string"
+      },
+      "content": {
+        "type": "string"
+      },
+      "cast": {
+        "type": "array"
+      },
+      "time": {
+        "type": "integer"
+      },
+      "year": {
+        "type": "integer"
+      },
+      "view": {
+        "type": "integer"
+      },
+      "rate": {
+        "type": "integer"
+      },
+      "featured": {
+        "type": "integer"
+      },
+      "cid": {
+        "type": "integer",
+        "model": "category",
+        "foreignKey": true,
+        "alias": "cid"
+      },
+      "uid": {
+        "type": "integer",
+        "model": "user",
+        "foreignKey": true,
+        "alias": "uid"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "user": {
+      "email": {
+        "type": "string",
+        "unique": true
+      },
+      "password": {
+        "type": "string"
+      },
+      "group": {
+        "type": "string",
+        "defaultsTo": "Member"
+      },
+      "name": {
+        "type": "string"
+      },
+      "birthday": {
+        "type": "string"
+      },
+      "avatar": {
+        "type": "string",
+        "defaultsTo": "no-avatar.png"
+      },
+      "point": {
+        "type": "integer",
+        "defaultsTo": 10
+      },
+      "about": {
+        "type": "longtext",
+        "defaultsTo": "viết nội dung giới thiệu về bản thân của bạn"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    }
+  },
+  "counters": {
+    "user": {
+      "id": 27
+    },
+    "category": {
+      "id": 10
+    },
+    "post": {
+      "id": 37
+    },
+    "file": {
+      "id": 1
+    },
+    "files": {
+      "id": 8
+    }
+  }
+}

@@ -1,0 +1,47 @@
+<div class="category-page">
+  <%- partial ('common/navbar.ejs') %>
+  <div class="container">
+    <div id="list-post" class="col-sm-8">
+      <div class="panel panel-default">
+        <div class="panel-heading"><i class="fa fa-film"></i> SEARCH RESULT</div>
+        <div id="search" class="panel-body">
+          <form id="search-form" action="post">
+            <div class="input-group">
+              <input type="text" class="form-control" name="putkeyword" id='search-key' value="">
+              <input type="text" class="sr-only" name="keyword" value="">
+              <div class="input-group-btn">
+                <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i>  Search</button>
+              </div>
+            </div>
+          </form>
+        </div><hr>
+          <div class="panel-body">
+          <% _.each(searchPost, function(post) { %>
+          <a href="/post/view?id=<%= post.id %>&slug=<%= post.slug %>">
+            <div class="col-md-3 col-xs-3 col-sm-3 new-post">
+              <img class="thumb-post" src="<%= post.thumbnail %>">
+              <!--Thumbnail 270x400-->
+              <div class="name-post">
+                <%= post.name %>
+                <span class="desc-post"><%= post.description %></span>
+              </div>
+            </div>
+          </a>
+          <% }) %>
+        </div>
+        <div class="panel-footer text-center">
+          <ul class="pagination">
+            <li><a href="/category/view?id=">1</a></li>
+            <li class="active"><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <%- partial ('common/column-right.ejs') %>
+
+  </div>
+</div>
