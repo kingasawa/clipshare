@@ -19,7 +19,8 @@
 var cssFilesToInject = [
   'styles/**/*.css',
   'bootstrap/css/bootstrap-editable.css',
-  'font-awesome/css/font-awesome.min.css'
+  'font-awesome/css/font-awesome.min.css',
+  'tagsinput/bootstrap-tagsinput.css'
 
 ];
 
@@ -40,10 +41,10 @@ var jsFilesToInject = [
   'js/bootstrap.min.js',
   'ckeditor/ckeditor.js',
   'js/main.js',
-
   'js/bootstrap-editable.min.js',
   'js/plugins/api.js',
-  'js/plugins/jquery.dataTables.min.js'
+  'js/plugins/jquery.dataTables.min.js',
+  'tagsinput/bootstrap-tagsinput.js'
 ];
 
 

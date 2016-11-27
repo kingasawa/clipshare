@@ -7,11 +7,15 @@
 
 module.exports = {
   index: (req, res) => {
-    res.view("template/user/login");
+    Category.find(function(err,allCategory) {
+      res.view("template/user/login",{allCategory});
+    })
   },
 
   register: (req, res) => {
-    res.view("template/user/register");
+    Category.find(function(err,allCategory) {
+      res.view("template/user/register",{allCategory});
+    })
   }
 };
 

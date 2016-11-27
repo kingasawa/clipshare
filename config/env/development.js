@@ -19,8 +19,8 @@ module.exports = {
 
   models: {
     // connection: 'someMysqlServer'
-    connection: 'localDiskDb',
-    migrate: 'alter'
-  }
-
+    connection: 'someMysqlServer1',
+    migrate: 'safe'
+  },
+  port:1337
 };

@@ -11,7 +11,13 @@ module.exports = {
     name: {
       type: 'string'
     },
+    slug: {
+      type: 'string'
+    },
     description: {
+      type: 'string'
+    },
+    imdb : {
       type: 'string'
     },
     type: {
@@ -21,12 +27,32 @@ module.exports = {
       type: 'string'
     },
     source: {
-      type: 'string'
+      type: 'longtext'
     },
     content: {
-      type: 'string'
+      type: 'longtext'
+    },
+    director: {
+      type: 'array'
+    },
+    cast: {
+      type: 'array'
+    },
+    time: {
+      type: 'integer'
+    },
+    year: {
+      type: 'integer'
     },
     view: {
+      type: 'integer',
+      defaultsTo: 0
+    },
+    rate: {
+      type: 'string',
+      defaultsTo: '0'
+    },
+    featured: {
       type: 'integer'
     },
     cid: {

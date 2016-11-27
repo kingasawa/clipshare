@@ -1,13 +1,13 @@
 <!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.2//EN" "http://www.openmobilealliance.org/tech/DTD/xhtml-mobile12.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
   <head>
-    <title><%=typeof title == 'undefined' ? 'CLIP SHARE' : title%></title>
+    <title><%=typeof title == 'undefined' ? 'ALO PHIM' : title%></title>
 
     <!-- Viewport mobile tag for sensible mobile support -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
+    <link rel="icon" href="/images/favicon.png" type='image/png'>
     <!--
         Stylesheets and Preprocessors
         ==============================
@@ -32,8 +32,10 @@
     <!--STYLES-->
     <link rel="stylesheet" href="/styles/importer.css">
     <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/video-js.min.css">
     <link rel="stylesheet" href="/bootstrap/css/bootstrap-editable.css">
     <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/tagsinput/bootstrap-tagsinput.css">
     <!--STYLES END-->
   </head>
 
@@ -77,6 +79,7 @@
     <script src="/js/bootstrap-editable.min.js"></script>
     <script src="/js/plugins/api.js"></script>
     <script src="/js/plugins/jquery.dataTables.min.js"></script>
+    <script src="/tagsinput/bootstrap-tagsinput.js"></script>
     <!--SCRIPTS END-->
   </body>
 </html>

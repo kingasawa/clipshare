@@ -1,0 +1,71 @@
+<div class="post-page">
+  <%- partial ('common/navbar.ejs') %>
+  <div class="container">
+    <div id="main-post" class="col-sm-8">
+      <div class="embed-responsive embed-responsive-16by9">
+        <% if (result.type==1) { %>
+        <iframe class="embed-responsive-item" src="//www.youtube.com/embed/<%= result.source %>"></iframe>
+        <% } else if (result.type==2 || result.type==4){ %>
+        <video controls><source src="<%= result.source %>" type="video/mp4"></video>
+        <% } else if (result.type==3) { %>
+        <iframe class="embed-responsive-item" src="https://drive.google.com/file/d/<%= result.source %>/preview"></iframe>
+        <% } %>
+      </div>
+      <div class="row post-info">
+        <div class="media">
+          <div class="media-left">
+            <img src="<%= result.thumbnail %>" class="media-object" style="width:80px">
+          </div>
+          <div class="media-body">
+            <h3 class="media-heading"><%= result.name %></h3>
+            <p><%= result.description %></p>
+            <p>
+              <span class="time-post"><i class="fa fa-clock-o"></i> <%= result.time %> phút</span>
+              <span class="year-post"><i class="fa fa-calendar"></i> <%= result.year %></span>
+              <span class="view-post"><i class="fa fa-eye"></i> <%= result.view %> views </span>
+            </p>
+            <p>
+              <a class="btn btn-warning btn-sm" href="#"><i class="fa fa-star"></i> <%= result.rate %></a>
+            </p>
+            <p></p>
+          </div>
+        </div>
+      </div>
+
+      <!--//nội dung phim-->
+      <div id="post-content" class="panel panel-default">
+        <div class="panel-heading">NỘI DUNG PHIM</div>
+        <div class="panel-body"><%= result.content.replace('&lt;', '<').replace('&gt;', '>') %></div>
+        <div class="panel-footer">
+          <p><a class="btn btn-default btn-sm" href="#"><i class="fa fa-bullhorn"></i> Director</a> <%= result.director %></p>
+          <p><a class="btn btn-default btn-sm" href="#"><i class="fa fa-users"></i> Actor</a> <%= result.cast %></p>
+        </div>
+        <div class="panel-footer">
+          <p><button class="btn btn-default" data-toggle="collapse" data-target="#fb-comment-content">View Comment</button></p>
+          <div id="fb-root"></div>
+          <div id="fb-comment-content" class="collapse">
+            <div id="fb-comments" class="fb-comments" data-href="http://vnmagic.net" data-width="100%" data-numposts="5"></div>
+          </div>
+          <script>(function(d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0];
+              if (d.getElementById(id)) return;
+              js = d.createElement(s); js.id = id;
+              js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=343633113334";
+              fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
+        </div>
+      </div>
+
+
+
+    </div>
+
+    <%- partial ('common/column-right.ejs') %>
+
+  </div>
+
+
+
+</div>
+
+<!--<p class="post-view pull-right"><button data-toggle="collapse" data-target="#demo">View Comment</button></p>-->

@@ -1,65 +1,328 @@
 /* Remove the navbar's default margin-bottom and rounded borders */
 body {
-  background:#f1f1f1 !important;
+  background:#ececec !important;
   letter-spacing: 0.5px;
+}
+footer {
+  margin-top:10px;
+  background-color: #222;
+  padding: 15px;
+  color:#fff;
 }
 a:hover {
   text-decoration: none !important;
 }
-table thead , .modal-header {
-  background:#a94442;
-  color:#fff;
+hr {
+   margin:10px 0;
 }
-#page-cat_manager, #page-post_manager,#page-user_manager {
-  background: #fff;
-
-}
-.navbar {
-  margin-bottom: 15px;
-  border-radius: 0;
- }
-.sidenav {
-  padding-top: 20px;
-  background-color: #f1f1f1;
+/*------------------------- HOMEPAGE -----------------------------*/
+.more-info {
+  width: 100%;
+  float:left;
+  font-size:12px;
+  overflow: hidden;
+  color:#606060;
 }
 
-.jumbotron {
-  background:#4b8c95;
-  color:#f5e1ca !important;
+/*------------------------ INPUT FORM CSS -------------------------*/
+
+#login-page, #register-page {
+  max-width:500px;
+  background:#fff;
+  padding:20px;
 }
-#homeCarousel {
-  margin:-15px 0 20px 0;
+.input-group-addon:last-child {
+  background:#f2f2f2;
 }
-.thumbnail iframe {
-  width:100%;
+.input[name=imdb] {
+  font-weight: bold;
+  font-size:16px;
 }
-/* Add a gray background color and some padding to the footer */
-footer {
-  margin-top:20px;
-  background-color: #f2f2f2;
-  padding: 25px;
+input[name=uploadFiles] {
+  width:98%;
+}
+.form-control-feedback {
+  color:#de5448;
+}
+div#search-result-fail {
+  color:#de5448;
 }
 table input[type="checkbox"] {
   position: relative !important;
 }
+select[name=type] {
+  font-family: 'FontAwesome', Helvetica;
+}
+/*---------------------- end css -----------------------------*/
 
+/*--------------------- MANAGE PAGE -------------------------*/
+#manage_post_length , #manage_category_length , #manage_post_info , #manage_category_info {
+  float:left;
+}
+#manage_post_filter, #manage_category_filter, #manage_post_paginate , #manage_category_paginate {
+  float:right;
+}
+#main-post, #list-post {
+  padding:0 5px;
+}
+#page-cat_manager, #page-post_manager,#page-user_manager {
+  background: #fff;
+  margin-bottom: 20px;
+}
+/*------------------- end manager page ----------------------*/
+
+
+/*------------------------- NAVBAR --------------------------*/
+.navbar {
+  margin-bottom: 15px;
+  border-radius: 0;
+}
+
+#navbar-cat{
+  background: #2f2f2f;
+  text-transform:uppercase;
+  font-weight:300;
+}
+#navbar-logo {
+  padding:10px 0;
+  margin-bottom:0;
+}
+#navbar-cat ul li {
+   border-bottom:3px solid #2f2f2f;
+}
+#navbar-cat .navbar-nav > .active > a {
+  background-color: #2f2f2f !important;
+  border-bottom:4px solid #de5448;
+  color:#de5448;
+  font-weight: 500;
+  padding:13px;
+}
+
+#navbar-cat ul li:hover > a{
+  color: #de5448;
+}
+/*--------------------------- end navbar -------------------------------*/
+
+/*-------------------------- MAIN PAGE ---------------------------------*/
+.homepage  {
+  background:#efefef;
+}
+.column-main {
+  padding:0;
+}
+div#column-right {
+  padding:0 5px;
+}
+.featured-name h5 {
+  color:#de5448;
+}
+.featured-name p {
+  color:#646464;
+  font-weight:300;
+}
+#featured {
+  background:#fff;
+  padding:10px 0;
+  margin:-20px 0 20px 0;
+}
+.featured-cat, .new-post {
+  padding:0 5px;
+}
+.thumbnail iframe {
+  width:100%;
+}
+/*------------------------ end main page -------------------------------*/
+
+/*--------------------- POST DETAIL PAGE ------------------------------*/
+
+.name-post {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background:#f0f0f0;
+  color:#de5448;
+  font-size:14px;
+  padding:10px 4px;
+}
+.fb-comments,#fb-comment-content {
+  margin-bottom:20px;
+  background: #fff;
+  padding:0 10px;
+}
+img.thumb-post,img.img-cat-post {
+  max-width:100%;
+}
+.new-post {
+  margin-bottom: 15px;
+}
+.post-info  {
+  margin:10px 0;
+  background: #fff;
+  padding:10px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28);
+}
+.name-post {
+  font-weight: 300;
+  font-size: 14px;
+}
+.post-author {
+  color:#737373;
+}
+.media-body p {
+  margin:4px 0;
+  font-weight:300;
+  color:#606060;
+}
+.media-body span {
+  margin-right:20px;
+}
+.post-info h3 {
+  color:#de5448;
+}
+span.desc-post {
+  width: 100%;
+  float:left;
+  font-size:12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color:#606060;
+}
+
+div#post-content img {
+  max-width:100%;
+}
+/*-------------------------- end post detail --------------------------*/
+
+
+/*------------------------- COMMON BOOTSTRAP --------------------------*/
+table thead , .modal-header {
+  background:#a94442;
+  color:#fff;
+}
+.sidenav {
+  padding-top: 20px;
+  background-color: #f1f1f1;
+}
+#homeCarousel,.carousel-inner , .column-right {
+  margin:-15px 0 20px 0;
+}
 .carousel-inner img {
   width: 100%; /* Set width to 100% */
-  min-height: 200px;
 }
-/* Hide the carousel text when the screen is less than 600 pixels wide */
-@media (max-width: 600px) {
+.panel-heading {
+  color: #ffffff !important;
+  background-color: #de5448 !important;
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: 1.2px !important;
+}
+.pagination > li > a, .pagination > li > span {
+  color:#de5448;
+}
+.pagination > .active > a {
+  background-color: #de5448;
+  border-color: #de5448;
+}
+.fa-check:before {
+  color:#3f8040;
+}
+/*--------------------------- end bootstrap -----------------------------*/
+
+.hvr-underline-from-center {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  position: relative;
+  overflow: hidden;
+}
+.hvr-underline-from-center:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  background: #de5448;
+  height: 4px;
+  -webkit-transition-property: left, right;
+  transition-property: left, right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-underline-from-center:hover:before, .hvr-underline-from-center:focus:before, .hvr-underline-from-center:active:before {
+  left: 0;
+  right: 0;
+}
+/*----------------------------------------------------------------------*/
+@media (max-width: 500px) {
+  img.thumb-post {
+    max-height:150px;
+  }
   .carousel-caption {
     display: none;
   }
-}
-@media (max-width: 600px) {
   .container {
     padding-right: 0 !important;
     padding-left: 0 !important;
   }
+  .name-post {
+    font-size:12px;
+  }
+  span.desc-post {
+    font-size:10px;
+  }
 }
-form#login {
-  background:#fff;
-  padding:20px;
+@media (max-width: 1024px) {
+  img.thumb-post {
+    max-height:200px;
+  }
+  .container {
+    padding-right: 5px !important;
+    padding-left: 5px !important;
+  }
+}
+img.thumb-post {
+  max-height:260px;
+}
+
+@media (max-width: 1334px) {
+  img.thumb-post {
+    max-height:200px;
+  }
+  img.img-cat-post {
+
+  }
+}
+@media (max-width: 525px) { /* iPhone 6 Plus - ngang */
+  img.thumb-post {
+    max-height:200px;
+  }
+}
+@media (max-width: 450px) { /* iPhone 6 Plus - đứng */
+  img.thumb-post {
+    max-height:120px !important;
+  }
+  img.img-cat-post {
+    max-height:20px;
+  }
+}
+@media (max-width: 670px) { /* iPhone 6 Plus - ngang */
+  img.thumb-post {
+    max-height:150px;
+  }
+  img.img-cat-post {
+    max-height:120px;
+  }
+}
+@media (max-width: 900px) { /* iPhone 6 Plus - ngang */
+  img.thumb-post {
+    max-height:180px;
+  }
+  img.img-cat-post {
+    max-height:240px;
+  }
 }

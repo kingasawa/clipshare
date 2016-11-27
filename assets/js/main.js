@@ -1,3 +1,4 @@
+
 $(function() {
   var socket = io.sails.connect();
   socket.get('/socket');
@@ -162,26 +163,15 @@ $(function() {
   });
 
   $('#uploadForm').submit(function(u){
-    $('#thumbnail').modal('hide');
+    $('#thumbnailModal').modal('hide');
+    $('button#uploadDone').text('  Uploaded Successful');
+    $('button#uploadDone').removeClass('btn-warning').addClass('btn-success')
   });
   socket.on('upload/thumbnail',function(data){
     $('#add-post-form input[name=thumbnail]').val(data.img);
-  })
+  });
 
   $('#add-post-form').submit(function(a) {
-    $('#addPostModal').modal('hide');
-    // var newdata = new FormData(this);
-    // $.ajax({
-    //   url: 'file/thumbnail',
-    //   data: newdata,
-    //   cache: false,
-    //   contentType: 'multipart/form-data',
-    //   processData: false,
-    //   type: 'POST',
-    //   success: function(result){
-    //     alert(result);
-    //   }
-    // });
     a.preventDefault();
     var data = $('#add-post-form').serialize();
     socket.get('/admin/postadd?' + data);
@@ -196,11 +186,79 @@ $(function() {
   });
 
   var getLink = window.location.href.substr().split("/");
-  if ( getLink[3]+'/'+getLink[4] =="admin/post") {
+  if ( getLink[3]+'/'+getLink[4] =="admin/newpost") {
     CKEDITOR.replace('add-content');
   } else if ( getLink[3]+'/'+getLink[4] =="admin/postid") {
-  CKEDITOR.replace('edit-content');
+    CKEDITOR.replace('edit-content');
   }
+
+  if ( getLink[3]+'/'+getLink[4] =="category/view") {
+
+  }
+
+
+// Script to add active class on menu
+  $(".navbar-left li a").each(function() {
+    var path = $(location).attr('pathname');
+    var param = $(location).attr('search');
+    var currentUrl = path+''+param;
+    var href = $(this).attr('href').trim();
+    // var currentURI = path.substring((path.lastIndexOf('/') + 1), path.length);
+    // currentURI = currentURI.replace(/^\//, "");
+    // href = href.replace(/^\//, "");
+    if (currentUrl === href) {
+      $(this).closest('li').addClass('active');
+    } else {
+      $(this).closest('li').removeClass();
+    }
+  });
+
+
+  // page onload
+  $(document).ready(function() {
+    $(window).keydown(function(event){
+      if(event.keyCode == 13) {
+        event.preventDefault();
+        return false;
+      }
+    });
+
+  });
+
+  $('#imdb').ready(function() {
+    $('button[name=add-new]').addClass('disabled');
+    $('label[name=imdb-title]').css('color','#a94442');
+    $('input#imdb').css({'color':'#a94442'});
+    $('#icon_search').show();
+    $('#icon_done').hide();
+    $('#icon_load').hide();
+  });
+
+  $('#imdb').keyup(function () {
+    $('#icon_search').hide();
+    $('#icon_done').hide();
+    $('#icon_load').show();
+    if ($('#imdb').val().length == 9) {
+      $('button[name=add-new]').removeClass('disabled');
+      var imdbTitle = $('#imdb').val();
+      socket.get('/imdb/search?imdb=' + imdbTitle);
+    }
+  });
+
+  socket.on('search/imdb',function(recieve) {
+    $('#icon_search').hide();
+    $('#icon_done').show();
+    $('#icon_load').hide();
+    $('label[name=imdb-title]').css('color','#3f8040');
+    $('input#imdb').css({'color':'#3f8040'});
+    $('#description').val(recieve.data.title);
+    $('#time').val(recieve.data.runtime);
+    $('#year').val(recieve.data.year);
+    $('#director').val(recieve.data.director);
+    $('#cast').val(recieve.data.actors);
+    $('#thumbInput').val(recieve.data.poster);
+    $('#rate').val(recieve.data.rating);
+  });
 
 });
 
@@ -225,6 +283,93 @@ function showMyImage(fileInput) {
   }
 }
 
+$(document).ready(function() {
+  $('#manage_post').DataTable();
+  $('#manage_category').DataTable();
+} );
+
+function chooseImg(e) {
+  var thumbLink = $(e).find('img').attr('src');
+  $('#add-post-form input[name=thumbnail]').val(thumbLink);
+  $('#galleryModal').modal('hide')
+}
+
 function goBack() {
   window.history.back();
 }
+
+$('#post-content .panel-body').each(function(){
+  var $this = $(this);
+  var t = $this.text();
+  $this.html(t.replace('&lt','<').replace('&gt', '>').replace(/\\r\\n/g, '<br />').replace(new RegExp("\\\\", "g"), ""));
+});
+
+$('#name').keyup(function () {
+  //Lấy text từ thẻ input title
+    var movieName = $('input[name=name]').val();
+    //Đổi chữ hoa thành chữ thường
+    var slug = movieName.toLowerCase();
+    //Đổi ký tự có dấu thành không dấu
+    slug = slug.replace(/á|à|ả|ạ|ã|ă|ắ|ằ|ẳ|ẵ|ặ|â|ấ|ầ|ẩ|ẫ|ậ/gi, 'a');
+    slug = slug.replace(/é|è|ẻ|ẽ|ẹ|ê|ế|ề|ể|ễ|ệ/gi, 'e');
+    slug = slug.replace(/i|í|ì|ỉ|ĩ|ị/gi, 'i');
+    slug = slug.replace(/ó|ò|ỏ|õ|ọ|ô|ố|ồ|ổ|ỗ|ộ|ơ|ớ|ờ|ở|ỡ|ợ/gi, 'o');
+    slug = slug.replace(/ú|ù|ủ|ũ|ụ|ư|ứ|ừ|ử|ữ|ự/gi, 'u');
+    slug = slug.replace(/ý|ỳ|ỷ|ỹ|ỵ/gi, 'y');
+    slug = slug.replace(/đ/gi, 'd');
+    //Xóa các ký tự đặt biệt
+    slug =
+      slug.replace(/\`|\~|\!|\@|\#|\||\$|\%|\^|\&|\*|\(|\)|\+|\=|\,|\.|\/|\?|\>|\<|\'|\"|\:|\;|_/gi,
+        '');
+    //Đổi khoảng trắng thành ký tự gạch ngang
+    slug = slug.replace(/ /gi, "-");
+    //Đổi nhiều ký tự gạch ngang liên tiếp thành 1 ký tự gạch ngang
+    //Phòng trường hợp người nhập vào quá nhiều ký tự trắng
+    slug = slug.replace(/\-\-\-\-\-/gi, '-');
+    slug = slug.replace(/\-\-\-\-/gi, '-');
+    slug = slug.replace(/\-\-\-/gi, '-');
+    slug = slug.replace(/\-\-/gi, '-');
+    //Xóa các ký tự gạch ngang ở đầu và cuối
+    slug = '@' + slug + '@';
+    slug = slug.replace(/\@\-|\-\@|\@/gi, '');
+    //In slug ra textbox có id “slug”
+    $('input[name=slug]').val(slug);
+});
+
+$('#search-key').keyup(function () {
+  //Lấy text từ thẻ input title
+  var inputKey = $('#search-key').val();
+  //Đổi chữ hoa thành chữ thường
+  var inputkey = inputKey.toLowerCase();
+  //Đổi ký tự có dấu thành không dấu
+  inputkey = inputkey.replace(/á|à|ả|ạ|ã|ă|ắ|ằ|ẳ|ẵ|ặ|â|ấ|ầ|ẩ|ẫ|ậ/gi, 'a');
+  inputkey = inputkey.replace(/é|è|ẻ|ẽ|ẹ|ê|ế|ề|ể|ễ|ệ/gi, 'e');
+  inputkey = inputkey.replace(/i|í|ì|ỉ|ĩ|ị/gi, 'i');
+  inputkey = inputkey.replace(/ó|ò|ỏ|õ|ọ|ô|ố|ồ|ổ|ỗ|ộ|ơ|ớ|ờ|ở|ỡ|ợ/gi, 'o');
+  inputkey = inputkey.replace(/ú|ù|ủ|ũ|ụ|ư|ứ|ừ|ử|ữ|ự/gi, 'u');
+  inputkey = inputkey.replace(/ý|ỳ|ỷ|ỹ|ỵ/gi, 'y');
+  inputkey = inputkey.replace(/đ/gi, 'd');
+  //Xóa các ký tự đặt biệt
+  inputkey =
+    inputkey.replace(/\`|\~|\!|\@|\#|\||\$|\%|\^|\&|\*|\(|\)|\+|\=|\,|\.|\/|\?|\>|\<|\'|\"|\:|\;|_/gi,
+      '');
+  //Đổi khoảng trắng thành ký tự gạch ngang
+  inputkey = inputkey.replace(/ /gi, "-");
+  //Đổi nhiều ký tự gạch ngang liên tiếp thành 1 ký tự gạch ngang
+  //Phòng trường hợp người nhập vào quá nhiều ký tự trắng
+  inputkey = inputkey.replace(/\-\-\-\-\-/gi, '-');
+  inputkey = inputkey.replace(/\-\-\-\-/gi, '-');
+  inputkey = inputkey.replace(/\-\-\-/gi, '-');
+  inputkey = inputkey.replace(/\-\-/gi, '-');
+  //Xóa các ký tự gạch ngang ở đầu và cuối
+  inputkey = '@' + inputkey + '@';
+  inputkey = inputkey.replace(/\@\-|\-\@|\@/gi, '');
+  //In slug ra textbox có id “slug”
+  $('input[name=keyword]').val(inputkey);
+});
+
+$('#search-form').submit(function(a) {
+  a.preventDefault();
+  var keyword = $('input[name=keyword]').val();
+  window.location.href = '/post/search?keyword='+keyword
+});
