@@ -1,6 +1,6 @@
 /**
  * PostController
- *
+ * @Author      :: Trần Cát Khánh
  * @description :: Server-side logic for managing posts
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
@@ -27,8 +27,11 @@ module.exports = {
               url: 'https://api.blogit.vn/getlink.php?link='+result.source
             },function(error,response,body){
               var data = JSON.parse(body);
+              var check = data.result.data.link[0];
+              if (typeof(check) != 'undefined') {
               result.source = data.result.data.link[0].file;
               result.source = result.source.replace('api.blogit.vn','vnmagic.net');
+              } else result.source = 'http://vietapi.net/linkdie.mp4';
               return res.view('template/post',{result, allCategory, fivePost, title:result.name})
             })
           } else {
@@ -75,10 +78,11 @@ module.exports = {
   },
 
   search: (req,res) => {
+    let postLimit = 12;
     let params = req.allParams();
-    Post.find({
-      slug:{'contains':params.keyword},sort:'createdAt DESC'
-    }).exec(function(err,searchPost) {
+    Post.find({slug:{'contains':params.keyword},sort:'createdAt DESC'})
+      .paginate({page:params.page,limit:postLimit})
+      .exec(function(err,searchPost) {
       if (!searchPost) {
         res.negotiate('Không tìm thấy phim')
       } else {

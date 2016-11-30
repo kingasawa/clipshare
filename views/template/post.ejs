@@ -26,6 +26,7 @@
             </p>
             <p>
               <a class="btn btn-warning btn-sm" href="#"><i class="fa fa-star"></i> <%= result.rate %></a>
+              <a class="btn btn-danger btn-sm" href="#"><i class="fa fa-unlink"></i> Báo link hỏng</a>
             </p>
             <p></p>
           </div>
@@ -37,8 +38,8 @@
         <div class="panel-heading">NỘI DUNG PHIM</div>
         <div class="panel-body"><%= result.content.replace('&lt;', '<').replace('&gt;', '>') %></div>
         <div class="panel-footer">
-          <p><a class="btn btn-default btn-sm" href="#"><i class="fa fa-bullhorn"></i> Director</a> <%= result.director %></p>
-          <p><a class="btn btn-default btn-sm" href="#"><i class="fa fa-users"></i> Actor</a> <%= result.cast %></p>
+          <p><a class="btn btn-success btn-sm" href="#"><i class="fa fa-bullhorn"></i> Director</a> <%= result.director %></p>
+          <p><a class="btn btn-success btn-sm" href="#"><i class="fa fa-users"></i> Actor</a> <%= result.cast %></p>
         </div>
         <div class="panel-footer">
           <p><button class="btn btn-default" data-toggle="collapse" data-target="#fb-comment-content">View Comment</button></p>

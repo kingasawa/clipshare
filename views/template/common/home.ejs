@@ -21,13 +21,10 @@
         </a>
         <% }) %>
       </div>
-      <div class="panel-footer text-center">
+      <div class="phantrang-home panel-footer text-center">
+        <span class="sr-only countPost"><%= countPost %></span>
         <ul class="pagination">
-          <li><a href="&page=1">1</a></li>
-          <li class="active"><a href="#">2</a></li>
-          <li><a href="#">3</a></li>
-          <li><a href="#">4</a></li>
-          <li><a href="#">5</a></li>
+          <!--<li class="active"><a href="?page=2">2</a></li>-->
         </ul>
       </div>
     </div>
@@ -62,7 +59,7 @@
               <p><i class="fa fa-calendar"></i> <%= featured.year %></p>
               <p><i class="fa fa-eye"></i> <%= featured.view %> views</p>
             </div>
-          </div></a>
+          </div></a><hr>
         <% }) %>
       </div>
     </div>

@@ -9,8 +9,10 @@ module.exports = {
 
   index: (req,res) => {
     let presentDate = (new Date()).toString();
-    let postLimit = 32;
+    let postLimit = 12;
     let params = req.allParams();
+
+    console.log(params);
 
     // Count all post
     let findCountPost = new Promise((resolve, reject) => {
@@ -43,7 +45,7 @@ module.exports = {
           resolve(allPost);
         })
       } else {
-        Post.find({sort:'createdAt DESC'}).paginate({params,limit:postLimit}).exec((err, allPost) => {
+        Post.find({sort:'createdAt DESC'}).paginate({page:params.page,limit:postLimit}).exec((err, allPost) => {
           if (err) {
             reject(err)
           }
@@ -53,12 +55,13 @@ module.exports = {
     });
     // Solve all using Async/Await
     (async () => {
-      var [featuredPost,allCategory,allPost] = await Promise.all([
+      var [countPost,featuredPost,allCategory,allPost] = await Promise.all([
+        findCountPost,
         findFeaturedPost,
         findAllCategory,
         findAllPost
       ]);
-      return res.view("homepage", {featuredPost,allCategory,allPost})
+      return res.view("homepage", {countPost,featuredPost,allCategory,allPost})
     })
     ()
   }
