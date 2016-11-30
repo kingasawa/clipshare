@@ -26,7 +26,7 @@
             </p>
             <p>
               <a class="btn btn-warning btn-sm" href="#"><i class="fa fa-star"></i> <%= result.rate %></a>
-              <a class="btn btn-danger btn-sm" href="#"><i class="fa fa-unlink"></i> Báo link hỏng</a>
+              <a class="btn btn-danger btn-sm" data-toggle="modal" data-target="#brokenLinkModal" href="#"><i class="fa fa-unlink"></i> Báo link hỏng</a>
             </p>
             <p></p>
           </div>
@@ -56,17 +56,29 @@
             }(document, 'script', 'facebook-jssdk'));</script>
         </div>
       </div>
-
-
-
     </div>
-
     <%- partial ('common/column-right.ejs') %>
-
   </div>
-
-
-
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="brokenLinkModal" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"><i class="fa fa-unlink"></i> Báo Link Hỏng</h4>
+      </div>
+      <div class="modal-body">
+        <p>Cám ơn bạn đã thông báo cho chúng tôi về tình trạng link hỏng,
+          chúng tôi sẽ khắc phục trong thời gian sớm nhất.</p>
+        <span class="sr-only link-id"><%= result.id %></span>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-close"></i> Đóng lại</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
 <!--<p class="post-view pull-right"><button data-toggle="collapse" data-target="#demo">View Comment</button></p>-->

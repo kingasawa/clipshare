@@ -55,6 +55,9 @@ module.exports = {
     featured: {
       type: 'integer'
     },
+    broken: {
+      type: 'integer'
+    },
     cid: {
       model: 'category'
     },

@@ -67,7 +67,7 @@ module.exports.connections = {
     host: 'vnmagic.net',
     port: 3306,
     user: 'root', //optional
-    password: 'password', //optional
+    password: 'Diablo321', //optional
     database: 'clipshare' //optional
   }
 

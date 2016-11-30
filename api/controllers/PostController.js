@@ -78,8 +78,8 @@ module.exports = {
   },
 
   search: (req,res) => {
-    let postLimit = 12;
     let params = req.allParams();
+    let postLimit = 12;
     Post.find({slug:{'contains':params.keyword},sort:'createdAt DESC'})
       .paginate({page:params.page,limit:postLimit})
       .exec(function(err,searchPost) {
@@ -93,6 +93,17 @@ module.exports = {
         })
       }
     })
+  },
+  error: (req,res) => {
+    // post/error?id=params_id&type=link
+    let params = req.allParams();
+
+      Post.update({id:params.id},{broken:1}).exec(function(err) {
+        if (err) return res.negotiate(err);
+        else console.log('Broken URL: '+params.id)
+      })
+
+
   }
 
 };

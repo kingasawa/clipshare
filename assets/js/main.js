@@ -223,6 +223,11 @@ $(function() {
       }
     });
 
+    $("#brokenLinkModal").on('show.bs.modal',function() {
+      var linkID = $(this).find('span.link-id').text();
+      socket.get('/post/error?id='+linkID);
+    });
+
   });
 
   $('#imdb').ready(function() {
@@ -308,7 +313,7 @@ function showMyImage(fileInput) {
 $(document).ready(function() {
   $('#manage_post').DataTable();
   $('#manage_category').DataTable();
-} );
+});
 
 function chooseImg(e) {
   var thumbLink = $(e).find('img').attr('src');
@@ -395,3 +400,5 @@ $('#search-form').submit(function(a) {
   var keyword = $('input[name=keyword]').val();
   window.location.href = '/post/search?keyword='+keyword
 });
+
+
