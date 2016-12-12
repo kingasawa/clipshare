@@ -61,14 +61,6 @@ module.exports.connections = {
     user: 'root', //optional
     password: 'pass', //optional
     database: 'database' //optional
-  },
-  someMysqlServer1: {
-    adapter: 'sails-mysql',
-    host: 'vnmagic.net',
-    port: 3306,
-    user: 'root', //optional
-    password: 'Diablo321', //optional
-    database: 'clipshare' //optional
   }
 
   /***************************************************************************
